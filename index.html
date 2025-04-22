@@ -1,456 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HD SOFTWARE SOLUTIONS</title>
-    <link rel="shortcut icon" href="./img/faviconhd.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/style.css">
-
-    <meta name="theme-color" content="#2091F9">
-    <meta name="title" content="HD SOFTWARE SOLUTIONS">
-    <meta name="description"
-        content="Hola, esta es mi web; para ayudarte a impulsar tu transformación digital YA.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://harolperiodico.github.io/web-HD-SOFTWARE-SOLUTIONS/">
-    <meta property="og:title" content="HD SOFTWARE SOLUTIONS">
-    <meta property="og:description"
-        content="Estoy desarrollando una plataforma web pensada para ayudarte a llevar tu emprendimiento, negocio o empresa al siguiente nivel.">
-    <meta property="og:image" content="https://harolperiodico.github.io/web-HD-SOFTWARE-SOLUTIONS/img/logo_HD_75.png">
-    <meta property="twitter:card" content="">
-    <meta property="twitter:url" content="">
-    <meta property="twitter:title" content="">
-    <meta property="twitter:description"
-        content="Hola, esta es mi web; para ayudarte a impulsar tu transformación digital YA.">
-    <meta property="twitter:image" content="https://harolperiodico.github.io/web-HD-SOFTWARE-SOLUTIONS/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Briefing Web</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      color: #333;
+    }
+    .section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    label, textarea, select, input[type="text"] {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .checkbox-group {
+      margin-top: 10px;
+    }
+  </style>
 </head>
-
 <body>
 
-    <header class="hero">
-        <nav class="nav container">
-            <div class="nav__logo">
-                <h1 class="nav__title">HD SOFTWARE SOLUTIONS.</h1>
-            </div>
+  <h1>Formulario de Briefing para Página Web</h1>
 
-            <ul class="nav__link nav__link--menu">
-                <li class="nav__items">
-                    <a href="#inicio" class="nav__links">Inicio</a>
-                </li>
-                <li class="nav__items">
-                    <a href="#acerca" class="nav__links">Acerca de</a>
-                </li>
-                <li class="nav__items">
-                    <a href="#servicios" class="nav__links">Servicios</a>
-                </li>
+  <div class="section">
+    <h2>1. ¿A qué se dedica tu negocio o proyecto?</h2>
+    <label for="descripcion">Descripción breve:</label>
+    <textarea id="descripcion" rows="4"></textarea>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Comercio / Tienda</label>
+      <label><input type="checkbox"> Servicios profesionales</label>
+      <label><input type="checkbox"> Salud y bienestar</label>
+      <label><input type="checkbox"> Belleza y estética</label>
+      <label><input type="checkbox"> Educación / Formación</label>
+      <label><input type="checkbox"> Gastronomía</label>
+      <label><input type="checkbox"> Arte y creatividad</label>
+      <label><input type="checkbox"> Eventos y entretenimiento</label>
+      <label><input type="checkbox"> Turismo / Alojamiento</label>
+      <label><input type="checkbox"> Tecnología / Software</label>
+      <label><input type="checkbox"> ONG / Proyecto social</label>
+      <label><input type="checkbox"> Marca personal / Influencer</label>
+      <label><input type="checkbox"> Otro: <input type="text"></label>
+    </div>
+  </div>
 
-                <li class="nav__items">
-                    <a href="#reseña" class="nav__links">Reseña</a>
-                </li>
-                
-                <li class="nav__items">
-                    <a href="#portafolio" class="nav__links">Portafolio</a>
-                </li>
+  <div class="section">
+    <h2>2. ¿Qué quieres lograr con tu página web?</h2>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Vender productos o servicios</label>
+      <label><input type="checkbox"> Mostrar información del negocio</label>
+      <label><input type="checkbox"> Generar clientes potenciales</label>
+      <label><input type="checkbox"> Recibir solicitudes de contacto</label>
+      <label><input type="checkbox"> Agendar citas o reservas</label>
+      <label><input type="checkbox"> Mostrar portafolio</label>
+      <label><input type="checkbox"> Compartir contenido / Blog</label>
+      <label><input type="checkbox"> Crear una comunidad</label>
+      <label><input type="checkbox"> Ofrecer cursos o talleres</label>
+      <label><input type="checkbox"> Monetizar con publicidad</label>
+      <label><input type="checkbox"> Recibir donaciones</label>
+      <label><input type="checkbox"> Promocionar un evento</label>
+      <label><input type="checkbox"> Posicionamiento SEO</label>
+      <label><input type="checkbox"> Validar una idea de negocio</label>
+      <label><input type="checkbox"> Brindar soporte al cliente</label>
+      <label><input type="checkbox"> Otro: <input type="text"></label>
+    </div>
+  </div>
 
-                <img src="./img/close.svg" class="nav__close">
-            </ul>
+  <div class="section">
+    <h2>3. ¿Qué te gustaría que hicieran los visitantes en tu web?</h2>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Escribirme por formulario</label>
+      <label><input type="checkbox"> Comprar o contratar</label>
+      <label><input type="checkbox"> Llamarme o enviar WhatsApp</label>
+      <label><input type="checkbox"> Registrarse o crear cuenta</label>
+      <label><input type="checkbox"> Suscribirse a newsletter</label>
+      <label><input type="checkbox"> Agendar cita</label>
+      <label><input type="checkbox"> Descargar recursos</label>
+      <label><input type="checkbox"> Ver portafolio</label>
+      <label><input type="checkbox"> Seguirme en redes</label>
+      <label><input type="checkbox"> Ver un video o presentación</label>
+      <label><input type="checkbox"> Otro: <input type="text"></label>
+    </div>
+  </div>
 
-            <div class="nav__menu">
-                <img src="./img/menu.svg" class="nav__img">
-            </div>
-        </nav>
+  <div class="section">
+    <h2>4. ¿Qué secciones quieres que tenga tu web?</h2>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Inicio</label>
+      <label><input type="checkbox"> Nosotros / Sobre mí</label>
+      <label><input type="checkbox"> Servicios</label>
+      <label><input type="checkbox"> Portafolio</label>
+      <label><input type="checkbox"> Tienda</label>
+      <label><input type="checkbox"> Galería</label>
+      <label><input type="checkbox"> Testimonios</label>
+      <label><input type="checkbox"> Blog / Novedades</label>
+      <label><input type="checkbox"> Preguntas frecuentes</label>
+      <label><input type="checkbox"> Contacto</label>
+      <label><input type="checkbox"> Agenda / Reserva</label>
+      <label><input type="checkbox"> Descargas</label>
+      <label><input type="checkbox"> Área privada / Login</label>
+      <label><input type="checkbox"> Otro: <input type="text"></label>
+    </div>
+  </div>
 
-        <section id="inicio" class="hero__container container">
-            <h1 class="hero__title">👉 Transformación Digital y Mejora Continua: La clave para una empresa competitiva.</h1>
-            <p class="hero__paragraph">📌 Adapta tu empresa a las nuevas tecnologías: ✔️ Las nuevas tecnologías te permitirán mejorar tus procesos y ofrecer una mejor experiencia a tus clientes. Elige la mejor solución para tu negocio; da un salto definitivo a la competitividad de tu empresa, te diseñamos 💡 DESDE CERO , para ti tu página WEB, blogs, tienda virtual, Marketing Digital y Crecimiento Web, ✅ Actualización y mantenimiento de sitios web.</p>
-            <a href="#" class="cta">✅ !Empieza YA¡</a>
-        </section>
-    </header>
+  <div class="section">
+    <h2>5. ¿Ya tienes los textos, imágenes y logotipo?</h2>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Textos</label>
+      <label><input type="checkbox"> Imágenes</label>
+      <label><input type="checkbox"> Logotipo</label>
+      <label><input type="checkbox"> Colores o estilo de marca</label>
+      <label><input type="checkbox"> Redes sociales activas</label>
+      <label><input type="checkbox"> Dominio web</label>
+      <label><input type="checkbox"> Hosting contratado</label>
+      <h3>¿Necesitas ayuda con algo?</h3>
+      <label><input type="checkbox"> Redacción de textos</label>
+      <label><input type="checkbox"> Fotografías o imágenes</label>
+      <label><input type="checkbox"> Diseño de logotipo</label>
+      <label><input type="checkbox"> Identidad visual / branding</label>
+      <label><input type="checkbox"> Dominio y hosting</label>
+      <label><input type="checkbox"> Otro: <input type="text"></label>
+    </div>
+  </div>
 
-    <main>
-        <section id="acerca" class="container about">
-            <h2 class="subtitle">¿Quieres un salto definitivo?</h2>
-            <p class="about__paragraph">🌟 La competitividad empresarial es un concepto clave en el mundo de los negocios. Se refiere a la capacidad de una empresa para mantenerse relevante y sobresalir en el mercado en el que opera. En un entorno cada vez más competitivo y globalizado, la competitividad es fundamental para el éxito de cualquier empresa. 📊 </p>
+  <div class="section">
+    <h2>6. Funcionalidades</h2>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Formulario de contacto</label>
+      <label><input type="checkbox"> WhatsApp</label>
+      <label><input type="checkbox"> Mapa de ubicación</label>
+      <label><input type="checkbox"> Blog o sección de noticias</label>
+      <label><input type="checkbox"> Tienda online / carrito</label>
+      <label><input type="checkbox"> Reservas o citas</label>
+      <label><input type="checkbox"> Galería de imágenes</label>
+      <label><input type="checkbox"> Área privada / Login</label>
+      <label><input type="checkbox"> Otro: <input type="text"></label>
+    </div>
+  </div>
 
-            <div class="about__main">
-                <article class="about__icons">
-                    <img src="./img/developers.jpg" class="about__icon">
-                    <h3 class="about__title">Obtén tu Página WEB</h3>
-                    <p class="about__paragrah">💻Tener tu propia página web es la mejor manera de hacer crecer tu negocio y destacar en el mundo digital. Con un sitio web profesional, puedes atraer más clientes, generar confianza y ofrecer tus productos o servicios las 24 horas del día. ¡Invierte en tu éxito y crea tu página web ahora! 💻</p>
-                </article>
+  <div class="section">
+    <h2>7. Extras</h2>
+    <div class="checkbox-group">
+      <label><input type="checkbox"> Posicionamiento en Google (SEO)</label>
+      <label><input type="checkbox"> Google Analytics</label>
+      <label><input type="checkbox"> Traducción a varios idiomas</label>
+      <label><input type="checkbox"> Correos corporativos</label>
+      <label><input type="checkbox"> Certificado SSL (HTTPS)</label>
+      <label><input type="checkbox"> Optimización de velocidad</label>
+      <label><input type="checkbox"> Mantenimiento web</label>
+      <label><input type="checkbox"> Otro: <input type="text"></label>
+    </div>
+  </div>
 
-                <article class="about__icons">
-                    <img src="./img/digital.png" class="about__icon">
-                    <h3 class="about__title">!Habilita YA¡ tu Hosting</h3>
-                    <p class="about__paragrah">🚀Potencia tu presencia en línea con tu propio hosting y toma el control total de tu sitio web. Con un hosting de calidad, disfrutarás de mayor velocidad, seguridad y un rendimiento óptimo para que tu página siempre esté disponible para tus clientes. ¡El momento de dar el salto es ahora! 🚀</p>
-                </article>
-
-                <article class="about__icons">
-                    <img src="./img/bad_day.jpg" class="about__icon">
-                    <h3 class="about__title">Realiza tu Dominio</h3>
-                    <p class="about__paragrah">🚀✨Haz que tu negocio destaque con un dominio propio y construye una identidad profesional en línea. Un dominio personalizado no solo genera confianza en tus clientes, sino que también te ayuda a fortalecer tu marca y mejorar tu presencia en internet. ¡Invierte en tu futuro digital y adquiere tu dominio hoy mismo! 🚀✨</p>
-                </article>
-            </div>
-        </section>
-
-        <section ="contacto" class="knowledge">
-            <div class="knowledge__container container">
-                <div class="knowledege__texts">
-                    <h2 class="subtitle">Adaptarse para avanzar y digitalizar para decidir mejor ¡Trasformación DIGITAL ahora!</h2>
-                    <p class="knowledge__paragraph">En la era digital, no tener una página web es perder oportunidades. Una web profesional te ayuda a atraer clientes, fortalecer tu marca y aumentar tus ventas. Destaca frente a la competencia y haz que tu negocio crezca. ¡Invierte en tu éxito y crea tu página web hoy! 🚀</p>
-                    <a href="#" class="cta">Contáctanos</a>
-                </div>
-
-                <figure class="knowledge__picture">
-                    <img src="./img/logo_HD.png" class="knowledge__img">
-                </figure>
-            </div>
-        </section>
-
-        <section id="servicios" class="price container">
-            <h2 class="subtitle">Obten el desarrollo perfecto para tu empresa</h2>
-
-            <div class="price__table">
-                <div class="price__element">
-                    <h2 class="price__price">📌Servicios de Programación</h2>
-                    <p class="price__name">Obtén tu Página WEB y Dominio</p>
-                    <div class="price__items">
-                        <p class="price__features">✅Sitios web corporativos</p>
-                        <p class="price__features">✅Landing pages</p>
-                        <p class="price__features">✅Blogs y páginas personales</p>
-                        <p class="price__features">✅Tiendas en línea</p>    
-                     </div>
-                     <h2 class="price__price">$30.000/mes</h2>
-                     <a href="#" class="price__cta">Contrata !YA¡</a>  
-                </div>
-
-                <div class="price__element">
-                    <h2 class="price__price">📌Desarrollo de Aplicaciones</h2>                    
-                    <p class="price__name">Sistemas de gestión (CRM, ERP.)</p>
-                    <div class="price__items">
-                        <p class="price__features">☑️Plataformas de reservas y citas</p>
-                        <p class="price__features">☑️Educativas</p>
-                        <p class="price__features">☑️Totalmente dinámica</p>
-                        <p class="price__features">☑️Aplicaciones SaaS</p>
-                     </div>
-                     <h2 class="price__price">$40.000/mes</h2>
-                     <a href="#" class="price__cta">Contrata !YA¡</a>
-                </div>
-
-                <div class="price__element">
-                    <h2 class="price__price">📌Optimización y Mantenimiento</h2>
-                    <p class="price__name">Actualización y mantenimiento</p>
-                    <div class="price__items">
-                        <p class="price__features">🔴Optimización de velocidad y rendimiento</p>
-                        <p class="price__features">🔴Seguridad web </p>
-                        <p class="price__features">🔴Diseño funcionales</p>
-                        <p class="price__features">🔴Prototipos interactivos </p>
-                    </div>
-                    <h3 class="price__price">$50.000/mes</h3>
-                    <a href="#" class="price__cta">Contrata !YA¡</a>
-                </div>
-
-                <div class="price__element">
-                    <h2 class="price__price">📌Marketing Digital</h2>
-                    <p class="price__name">Gestión de redes sociales</p>
-                    <div class="price__items">
-                        <p class="price__features">👉Publicidad en Google Ads</p>
-                        <p class="price__features">🧭Automatización de marketing</p>
-                        <p class="price__features">📁Email marketing</p>
-                    </div>
-                    <h3 class="price__price">$100.000/anual</h3>
-                    <h3 class="price__price">Todo incluido</h3>
-                    <a href="#" class="price__cta">Contrata !YA¡</a>
-                </div>
-
-
-                <div class="price__element">
-                    <h3 class="price__price">📌Desarrollo de Software</h3>
-                    <p class="price__name">Plataformas internas para empresas</p>
-                    <div class="price__items">
-                        <p class="price__features">🔧Integraciones con APIs</p>
-                        <p class="price__features">🔎Sistemas de control de inventarios y logística</p>
-                        <p class="price__features">🛠Software a Medida</p>
-                    </div>
-                    <h3 class="price__price">$200.000/anual</h3>
-                    <h3 class="price__price">Todo incluido</h3>
-                    <a href="#" class="price__cta">Contrata !YA¡</a>
-                </div>
-
-                <div class="price__element price__element--best">
-                    <h3 class="price__price">📌Gestión DIGITAL</h3>
-                    <p class="price__name">APP Móvil Moderna, Dinámica y Responsiva</p>
-                    <div class="price__items">
-                        <p class="price__features">🍽️Restaurantes y cafeterías</p>
-                        <p class="price__features">🛒 Pedidos en línea</p>
-                        <p class="price__features">🌟Diseño</p>
-                    </div>
-                    <h3 class="price__price">$500.000/anual</h3>
-                    <h3 class="price__price">Todo incluido</h3>
-                    <a href="#" class="price__cta">Contrata !YA¡</a>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="reseña" class="testimony">
-            <div class="testimony__container container">
-                <img src="./img/leftarrow.svg" class="testimony__arrow" id="before">
-
-                <section class="testimony__body testimony__body--show" data-id="1">
-                    <div class="testimony__texts">
-                        <h2 class="subtitle">Mi nombre es Harol Enrique Díaz Meléndez<span class="testimony__course">Propietario
-                                de HD SOFTWARE SOLUTIONS.</span></h2>
-                        <p class="testimony__review">🚀Soy Técnico Electricista e Ingeniero Electrónico, con especialización en análisis de datos y desarrollo web. Junto a mi equipo de especialistas en diseño, desarrollo web, marketing y gestión empresarial, te ayudamos a impulsar la transformación digital de tu empresa o negocio. 🚀</p>
-                            <h2 class="subtitle">¡Da el salto a la transformación digital AHORA!"</h2>
-                    </div>
-
-                    <figure class="testimony__picture">
-                        <img src="./img/FOTO HAROL.jpg" class="testimony__img">
-                    </figure>
-                </section>
-
-                <section class="testimony__body" data-id="2">
-                    <div class="testimony__texts">
-                        <h2 class="subtitle">Mi nombre es Victor Navarro<span class="testimony__course">Ingeniero de Programación.</span></h2>
-                        <p class="testimony__review">Como ingeniero de programación, me especializo en el diseño, desarrollo y mantenimiento de software eficiente y escalable. Analizo requerimientos, implemento soluciones tecnológicas innovadoras y optimizo el rendimiento de aplicaciones para garantizar su funcionalidad y seguridad. Además, trabajo con diversas tecnologías y metodologías ágiles para crear sistemas robustos que mejoren la experiencia del usuario y satisfagan las necesidades del negocio.</p>
-                    </div>
-
-                    <figure class="testimony__picture">
-                        <img src="./img/Foto victor.jpg" class="testimony__img">
-                    </figure>
-                </section>
-
-                <section class="testimony__body" data-id="3">
-                    <div class="testimony__texts">
-                        <h2 class="subtitle">Mi nombre es Yeiser Díaz Daza<span class="testimony__course">Programador Junior.</span></h2>
-                        <p class="testimony__review">Como programador junior, me encargo del desarrollo y mantenimiento de software, colaborando en la implementación de soluciones tecnológicas bajo la guía de programadores senior. Participo en la escritura de código, pruebas y depuración de aplicaciones, asegurando su correcto funcionamiento. Además, aprendo y aplico buenas prácticas de programación, mejorando mis habilidades y contribuyendo al éxito de los proyectos.</p>
-                    </div>
-
-                    <figure class="testimony__picture">
-                        <img src="./img/face4.jpg" class="testimony__img">
-                    </figure>
-                </section>
-
-                <section class="testimony__body" data-id="4">
-                    <div class="testimony__texts">
-                        <h2 class="subtitle">Mi nombre es Elimileth Barraza Torres<span class="testimony__course">Asesora administrativa.</span></h2>
-                        <p class="testimony__review">Como asesora administrativa, me encargo de optimizar los procesos internos de la empresa, asegurando una gestión eficiente de los recursos y el cumplimiento de los objetivos estratégicos. Brindo apoyo en la organización, planificación y control de tareas administrativas, mejorando la productividad y facilitando la toma de decisiones.</p>
-                    </div>
-
-                    <figure class="testimony__picture">
-                        <img src="./img/elimileth.jpg" class="testimony__img">
-                    </figure>
-                </section>
-
-                <img src="./img/rightarrow.svg" class="testimony__arrow" id="next">
-            </div>
-        </section>
-
-        <section class="questions container">
-            <h2 class="subtitle">Que debes saber.</h2>
-            <p class="questions__paragraph">Una web bien hecha no solo te da presencia, sino que te pone un paso adelante de la competencia, atrayendo más clientes y aumentando tus ventas. ¡Haz que tu negocio destaque!</p>
-
-            <section class="questions__container">
-                <article class="questions__padding">
-                    <div class="questions__answer">
-                        <h3 class="questions__title">¿Porque debo innovar?
-                            <span class="questions__arrow">
-                                <img src="./img/arrow.svg" class="questions__img">
-                            </span>
-                        </h3>
-
-                        <p class="questions__show">En el mundo digital actual, si tu negocio no está en línea, simplemente no existe para muchos clientes potenciales. Una página web o landing page bien diseñada no solo aumenta tu visibilidad, sino que también genera confianza y convierte visitantes en clientes. Además, con estrategias de marketing digital, puedes atraer más público, fidelizar a tus clientes y destacar frente a la competencia. No dejes que tu negocio pase desapercibido, ¡haz que crezca con una presencia digital efectiva!.</p>
-                    </div>
-                </article>
-
-                <article class="questions__padding">
-                    <div class="questions__answer">
-                        <h3 class="questions__title">¿Porque tener web, hosting y dominio?
-                            <span class="questions__arrow">
-                                <img src="./img/arrow.svg" class="questions__img">
-                            </span>
-                        </h3>
-
-                        <p class="questions__show">Para que tu negocio tenga presencia en línea, necesitas tres elementos clave: una web atractiva y funcional, un hosting rápido y seguro que la mantenga siempre disponible, y un dominio profesional que refuerce tu marca. Sin estos componentes, tu empresa no podrá destacar ni ser encontrada fácilmente en internet. Tenerlos te permite generar confianza, atraer clientes y competir en el mercado digital. ¡Invierte en tu crecimiento online hoy!</p>
-                    </div>
-                </article>
-
-                <article class="questions__padding">
-                    <div class="questions__answer">
-                        <h3 class="questions__title">Tenemos diferentes Planes para ti.
-                            <span class="questions__arrow">
-                                <img src="./img/arrow.svg" class="questions__img">
-                            </span>
-                        </h3>
-
-                        <p class="questions__show">El crecimiento de tu negocio empieza con una inversión inteligente en su presencia digital. Tenemos planes diseñados para ti, ajustados a tus necesidades y presupuesto, para que puedas tener una web profesional, hosting confiable y dominio propio. No dejes pasar más oportunidades, da el siguiente paso y haz que tu negocio brille en internet. ¡Elige el plan perfecto y empieza a crecer hoy mismo!</p>
-                    </div>
-                </article>
-            </section>
-
-            <section class="questions__offer">
-                <h2 class="subtitle">¿Estas listo para destacarte?</h2>
-                <p class="questions__copy">¿Estás listo para destacarte? Da el paso hacia el éxito digital con una web profesional, un dominio propio y un plan que impulse tu negocio. No esperes más para marcar la diferencia y atraer más clientes. ¡Haz que tu marca brille hoy!</a>
-                </section>
-                <section id="portafolio" class="portafolio">
-                    <div class="contenedor">
-                        <h1 class="titulo">Portafolio</h1>
-                        <div class="galeria-port">
-                             <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="enlace-port">
-                                <div class="imagen-port">
-                                    <img src="img/img1.jpg" alt="">
-                                    <div class="hover-galeria">
-                                        <img src="img/icono1.png" alt="">
-                                        <p>Ver Video</p>
-                                    </div>
-                                 </div>
-                             </a>
-                            <a href="texto.html" target="_blank" class="enlace-port">
-                                <div class="imagen-port">
-                                    <img src="img/img2.jpg" alt="">
-                                    <div class="hover-galeria">
-                                        <img src="img/icono1.png" alt="">
-                                        <p>Leer Texto</p>
-                                    </div>
-                                </div> 
-                            </a>
-                            <a href="documento.pdf" target="_blank" class="enlace-port">
-                                <div class="imagen-port">
-                                    <img src="img/img3.jpg" alt="">
-                                    <div class="hover-galeria">
-                                        <img src="img/icono1.png" alt="">
-                                        <p>Ver PDF</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="archivo.zip" download class="enlace-port">
-                                <div class="imagen-port">
-                                    <img src="img/img1.jpg" alt="">
-                                    <div class="hover-galeria">
-                                        <img src="img/icono1.png" alt="">
-                                        <p>Descargar Archivo</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="enlace-port">
-                                <div class="imagen-port">
-                                    <img src="img/img4.jpg" alt="">
-                                    <div class="hover-galeria">
-                                        <img src="img/icono1.png" alt="">
-                                        <p>Ver Video</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="texto.html" target="_blank" class="enlace-port">
-                                <div class="imagen-port">
-                                    <img src="img/img5.jpg" alt="">
-                                    <div class="hover-galeria">
-                                        <img src="img/icono1.png" alt="">
-                                        <p>Leer Texto</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="documento.pdf" target="_blank" class="enlace-port">
-                                <div class="imagen-port">
-                                    <img src="img/img6.jpg" alt="">
-                                    <div class="hover-galeria">
-                                        <img src="img/icono1.png" alt="">
-                                        <p>Ver PDF</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="archivo.zip" download class="enlace-port">
-                                <div class="imagen-port">
-                                    <img src="img/img7.jpg" alt="">
-                                    <div class="hover-galeria">
-                                        <img src="img/icono1.png" alt="">
-                                        <p>Descargar Archivo</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </section> 
-      </main>
-    <footer class="footer">
-        <section class="footer__container container">
-            <nav class="nav nav--footer">
-                <h2 class="footer__title">HD SOFTWARE SOLUTIONS.</h2>
-
-                <div style="background-color: #fff; padding: 25px; border-radius: 10px; font-family: Georgia, serif; color: #333; max-width: 600px; margin: auto; border: 1px solid #e0e0e0;">
-                      <p style="font-size: 16px; margin-bottom: 10px;">
-                        <strong>📍 Dirección:</strong> Carrera 1g # 7-11, San Antonio, Malambo, Atlántico
-                      </p>
-                      <p style="font-size: 16px; margin-bottom: 10px;">
-                        <strong>📞 Teléfono:</strong> <a href="tel:+573167543109" style="color: #b76e79; text-decoration: none;">+57 316 754 3109</a>
-                      </p>
-                      <p style="font-size: 16px; margin-bottom: 10px;">
-                        <strong>📱 WhatsApp:</strong>
-                        <a href="https://wa.me/573167543109" target="_blank" style="color: #25D366; font-weight: bold"; text-decoration: none; font-weight: bold;">Escríbenos</a>
-                      </p>
-                      <p style="font-size: 16px; margin-bottom: 0;">
-                        <strong>📧 Correo:</strong>
-                        <a href="mailto:haroldiazmelendez@gmail.com" style="color: #b76e79; text-decoration: none;">haroldiazmelendez@gmail.com</a>
-                      </p>
-                </div>
-                
-                <ul class="nav__link nav__link--footer">
-                    <li class="nav__items">
-                        <a href="#inicio" class="nav__links">Inicio</a>
-                    </li>
-                    <li class="nav__items">
-                        <a href="#acerca" class="nav__links">Acerca de</a>
-                    </li>
-                    <li class="nav__items">
-                        <a href="#servicios" class="nav__links">Servicios</a>
-                    </li>
-                    <li class="nav__items">
-                        <a href="#reseña" class="nav__links">Reseña</a>
-                    </li>                    
-                    <li class="nav__items">
-                        <a href="#portafolio" class="nav__links">Portafolio</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <form class="footer__form" action="https://formspree.io/f/mblgeozp" method="POST">
-                <h2 class="footer__newsletter">Contáctanos, déjanos tus @ datos.</h2>
-                <div class="footer__inputs">
-                    <input type="text" name="nombre" class="footer__input" placeholder="Nombre" required><br><br>
-                    <input type="tel" name="telefono" class="footer__input"  
-                        pattern="[0-9]{10}" 
-                        placeholder="Teléfono Ej: 5551234567" 
-                        required><br><br>
-                    <input type="email" placeholder="Email:" class="footer__input" name="_replyto" required><br><br>                   
-                    <input type="submit" value="Registrate" class="footer__submit">
-                  </form>
-                </div>
-
-        </section>
-                     <div class="mapa">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.0891158775875!2d-74.755123!3d10.850000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef5cb7e2e0f5f3b%3A0x6cfeb62a5a657eef!2sSan%20Antonio%2C%20Malambo%2C%20Atl%C3%A1ntico!5e0!3m2!1ses-419!2sco!4v1713526852041!5m2!1ses-419!2sco"
-                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-                            </iframe>
-                    </div>
-        <section class="footer__copy container">
-            <div class="footer__social">
-                <a href="#" class="footer__icons"><img src="./img/facebook.svg" class="footer__img"></a>
-                <a href="#" class="footer__icons"><img src="./img/twitter.svg" class="footer__img"></a>
-                <a href="#" class="footer__icons"><img src="./img/youtube.svg" class="footer__img"></a>
-            </div>
-
-            <h3 class="footer__copyright">Derechos reservados &copy; Harol Enrique Díaz Meléndez</h3>
-        </section>
-    </footer>
-    <script src="js/menu.js"></script>	
-    <script src="js/slider.js"></script>
-    <script src="js/questions.js"></script>
-    
 </body>
-
 </html>
