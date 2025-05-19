@@ -166,99 +166,102 @@
                 <!-- RE FORMULARIO -->
         <section id="seccion-re">
           <div class="container">
-          <h2>Formulario RE</h2>
-          <form id="reForm">
-              <label>Fecha: <input type="date" name="fecha" required></label>
-              <label>Equipo:
-                <select name="equipo" required>
-                  <option value="" disabled selected>Seleccione equipo</option>
-                  <option value="137">137</option>
-                  <option value="138">138</option>
-                  <option value="139">139</option>
-                  <option value="140">140</option>
-                  <option value="141">141</option>
-                  <option value="142">142</option>
-                  <option value="143">143</option>
-                  <option value="144">144</option>
-                  <option value="145">145</option>
-                  <option value="146">146</option>
-                  <option value="147">147</option>
-                  <option value="148">148</option>
-                  <option value="149">149</option>
-                  <option value="150">150</option>
-                  <option value="151">151</option>
-                  <option value="152">152</option>
-                  <option value="153">153</option>
-                  <option value="154">154</option>
-                  <option value="155">155</option>
-                  <option value="156">156</option>
-                </select>
-              <label>Descripción:
-                <textarea name="descripcion" rows="3" required></textarea>
-              </label>
+		<div class="tab-content" id="re">
+	          <h2>Formulario RE</h2>
+	          <form id="reForm">
+	              <label>Fecha: <input type="date" name="fecha" required></label>
+	              <label>Equipo:
+	                <select name="equipo" required>
+	                  <option value="" disabled selected>Seleccione equipo</option>
+	                  <option value="137">137</option>
+	                  <option value="138">138</option>
+	                  <option value="139">139</option>
+	                  <option value="140">140</option>
+	                  <option value="141">141</option>
+	                  <option value="142">142</option>
+	                  <option value="143">143</option>
+	                  <option value="144">144</option>
+	                  <option value="145">145</option>
+	                  <option value="146">146</option>
+	                  <option value="147">147</option>
+	                  <option value="148">148</option>
+	                  <option value="149">149</option>
+	                  <option value="150">150</option>
+	                  <option value="151">151</option>
+	                  <option value="152">152</option>
+	                  <option value="153">153</option>
+	                  <option value="154">154</option>
+	                  <option value="155">155</option>
+	                  <option value="156">156</option>
+	                </select>
+	              <label>Descripción:
+	                <textarea name="descripcion" rows="3" required></textarea>
+	              </label>
+	
+	              <label>Parte: <input type="text" name="parte" placeholder="Si no tiene (No o Ningúna)" required></label>
+			      
+	              <label>Prioridad:
+	                <select name="prioridad" required>
+	                  <option value="P1">P1</option>
+	
+	                </select>
+	              </label>
+			      
+	              <label>Responsable: <input type="text" name="responsable" required></label>
+	
+	              <label>Turno:
+	                <select name="turno" required>
+	                  <option value="A1">A1</option>
+	                  <option value="A2">A2</option>
+	                </select>
+	              </label>
+	
+	              <label>Grupo:
+	                <select name="grupo" required>
+	                  <option value="G1">G1</option>
+	                  <option value="G2">G2</option>
+	                  <option value="G3">G3</option>
+	                </select>
+	              </label>
+	
+	              <label>Acción:
+	                <select name="accion" required>
+	                  <option value="Abierta">Abierta</option>
+	                  <option value="Cerrada">Cerrada</option>
+	                </select>
+	              </label>
+	
+	            <button type="submit">Enviar</button>
+	          </form>
+	          </div>
+		</div>
+		 <!-- RE TABLA -->
+        
+	          <h2>Registros RE</h2>
+	          <div class="container">
+	          <table id="reTable" border="1">
+	            <thead>
+	              <tr>
+	                <th>Fecha</th>
+	                <th>Equipo</th>
+	                <th>Descripción</th>
+	                <th>Parte</th>
+			<th>Prioridad</th>
+	                <th>Responsable</th>
+	                <th>Turno</th>
+	                <th>Grupo</th>
+	                <th>Acción</th>
+	              </tr>
+	            </thead>
+	            <tbody>
+	              <!-- Aquí se insertarán las filas dinámicamente -->
+	            </tbody>
+	          </table>
+	          </div>
+	     </section>
 
-              <label>Parte: <input type="text" name="parte" placeholder="Si no tiene (No o Ningúna)" required></label>
-		      
-              <label>Prioridad:
-                <select name="prioridad" required>
-                  <option value="P1">P1</option>
-
-                </select>
-              </label>
-		      
-              <label>Responsable: <input type="text" name="responsable" required></label>
-
-              <label>Turno:
-                <select name="turno" required>
-                  <option value="A1">A1</option>
-                  <option value="A2">A2</option>
-                </select>
-              </label>
-
-              <label>Grupo:
-                <select name="grupo" required>
-                  <option value="G1">G1</option>
-                  <option value="G2">G2</option>
-                  <option value="G3">G3</option>
-                </select>
-              </label>
-
-              <label>Acción:
-                <select name="accion" required>
-                  <option value="Abierta">Abierta</option>
-                  <option value="Cerrada">Cerrada</option>
-                </select>
-              </label>
-
-            <button type="submit">Enviar</button>
-          </form>
-          </div>
-        </section>
-
-        <!-- RE TABLA -->
-        <section>
-          <h2>Registros RE</h2>
-          <div class="container">
-          <table id="reTable" border="1">
-            <thead>
-              <tr>
-                <th>Fecha</th>
-                <th>Equipo</th>
-                <th>Descripción</th>
-                <th>Parte</th>
-		<th>Prioridad</th>
-                <th>Responsable</th>
-                <th>Turno</th>
-                <th>Grupo</th>
-                <th>Acción</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Aquí se insertarán las filas dinámicamente -->
-            </tbody>
-          </table>
-          </div>
-        </section>
+       
+        
 
               <section id="backlog">
                 <div class="container">
