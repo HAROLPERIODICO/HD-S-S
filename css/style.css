@@ -378,23 +378,9 @@
   margin-bottom: 2rem;
   font-size: 2rem;
 }
-.seccion-re {
-  padding: 4rem 1rem;
-  background-color: #fffaf5;
-  color: #333;
-  max-width: 800px;
-  margin: auto;
-}
-
-.seccion-re h2 {
-  text-align: center;
-  color: #fb0505;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-}
 
 /* Estilo del formulario */
-#form-re {
+#re-form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -404,13 +390,13 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#form-re label {
+#re-form label {
   font-weight: bold;
   color: #555;
 }
 
-#form-re input,
-#form-re textarea {
+#re-form input,
+#re-form textarea {
   padding: 0.7rem 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -418,14 +404,14 @@
   transition: border-color 0.3s ease;
 }
 
-#form-re input:focus,
-#form-re textarea:focus {
+#re-form input:focus,
+#re-form textarea:focus {
   border-color: #fb0505;
   outline: none;
 }
 
 /* Botón de envío */
-#form-re button[type="submit"] {
+#re-form button[type="submit"] {
   background-color: #fb0505;
   color: #fff;
   padding: 0.8rem 1.5rem;
@@ -437,7 +423,7 @@
   transition: background-color 0.3s ease;
 }
 
-#form-re button[type="submit"]:hover {
+#re-form button[type="submit"]:hover {
   background-color: #c90404;
 }
 
@@ -456,7 +442,7 @@
     padding: 2rem 1rem;
   }
 
-  #form-re {
+  #re-form {
     padding: 1.5rem;
   }
 }
