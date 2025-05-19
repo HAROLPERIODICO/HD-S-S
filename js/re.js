@@ -2,16 +2,16 @@
 // Description: JavaScript code to handle the backlog form submission and data display
 const reForm = document.getElementById('reForm');
 const reTableBody = document.querySelector('#reTable tbody');
-const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbxZvIrWFXRoKkjmRvo6B1NWmyidLpJzK9M7SeiDfuzLUxrqdjogahI1vtAIPf1b5YnL/exec'; // tu URL
+const reWebhookUrl = 'TU_URL_DEL_DEPLOY_WEBAPP'; // remplaza esto con la tuya
 
 function agregarFilaRE(data) {
   const row = document.createElement('tr');
-  ['fecha', 'equipo', 'descripcion', 'parte', 'prioridad', 'responsable', 'turno', 'grupo', 'accion', 'imagen'].forEach(key => {
+  ['fecha', 'equipo', 'descripcion', 'parte', 'prioridad', 'responsable', 'turno', 'grupo', 'accion', 'imagenUrl'].forEach(key => {
     const td = document.createElement('td');
-    if (key === 'imagen' && data[key]) {
+    if (key === 'imagenUrl') {
       const link = document.createElement('a');
       link.href = data[key];
-      link.textContent = 'Ver Imagen';
+      link.textContent = 'Ver imagen';
       link.target = '_blank';
       td.appendChild(link);
     } else {
@@ -24,12 +24,12 @@ function agregarFilaRE(data) {
 
 async function cargarDatosRE() {
   try {
-    const response = await fetch(reWebhookUrl);
-    const registros = await response.json();
+    const res = await fetch(reWebhookUrl);
+    const data = await res.json();
     reTableBody.innerHTML = '';
-    registros.forEach(agregarFilaRE);
-  } catch (error) {
-    console.error('Error al cargar registros RE:', error);
+    data.forEach(agregarFilaRE);
+  } catch (err) {
+    console.error('Error al cargar datos:', err);
   }
 }
 
@@ -38,16 +38,16 @@ reForm.addEventListener('submit', async function (e) {
   const formData = new FormData(reForm);
 
   try {
-    await fetch(reWebhookUrl, {
+    const res = await fetch(reWebhookUrl, {
       method: 'POST',
-      body: formData,
+      body: formData
     });
 
-    const data = Object.fromEntries(formData.entries());
-    agregarFilaRE(data);
+    const responseData = await res.json();
+    agregarFilaRE(responseData);
     reForm.reset();
-  } catch (error) {
-    console.error('Error al enviar datos RE:', error);
+  } catch (err) {
+    console.error('Error al enviar datos:', err);
   }
 });
 
