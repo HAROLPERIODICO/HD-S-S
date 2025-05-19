@@ -2,7 +2,7 @@
 // Description: JavaScript code to handle the backlog form submission and data display
 const reForm = document.getElementById('reForm');
 const reTableBody = document.querySelector('#reTable tbody');
-const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbxZvIrWFXRoKkjmRvo6B1NWmyidLpJzK9M7SeiDfuzLUxrqdjogahI1vtAIPf1b5YnL/exec'; // tu URL
+const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbxZvIrWFXRoKkjmRvo6B1NWmyidLpJzK9M7SeiDfuzLUxrqdjogahI1vtAIPf1b5YnL/exec'; // actualiza con la tuya
 
 function agregarFilaRE(data) {
   const row = document.createElement('tr');
@@ -43,11 +43,11 @@ reForm.addEventListener('submit', async function (e) {
       body: formData
     });
 
-    const responseData = await res.json();
+    const responseData = await res.json(); // solo si App Script devuelve JSON válido
     agregarFilaRE(responseData);
     reForm.reset();
   } catch (err) {
-    console.error('Error al enviar datos:', err);
+    console.error('Error al enviar datos RE:', err);
   }
 });
 
