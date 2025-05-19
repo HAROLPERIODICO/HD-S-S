@@ -356,7 +356,7 @@
 h2 {
   text-align: center;
   margin-bottom: 20px;
-  color:  #fb0505;
+  color: #fb4f05fa;
 }
 
 /* Formulario */
@@ -405,7 +405,7 @@ table {
 }
 
 thead {
-  background:  #fb0505;
+  background: #fb4f05fa;
   color: white;
 }
 
@@ -426,8 +426,14 @@ tbody tr:nth-child(even) {
   }
 
   th, td {
-    font-size: 10px;
+    font-size: 5px;
   }
+    /* Tabla */
+   table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+   }
 }
 
   /* ============================
