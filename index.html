@@ -58,155 +58,265 @@
 
     <main>
       
-      <section id="indicadores" class="indicadores">
-          <div class="container">
-            <h2>Indicadores</h2>
-            <ul class="indicadores-menu">
-              <li data-target="dis-meta">DIS - Meta Mensual</li>
-            <div class="indicador-contenido" id="dis-meta">
-              <h3>DIS - Meta Mensual</h3>
-              <p>Indicador que muestra el rendimiento mensual en relación con la meta establecida.</p>
-              <img src="img/logo_HD.png" alt="DIS Meta Mensual">
-            </div>
-              <li data-target="dis-acumulada">DIS - Acumulada</li>
-            <div class="indicador-contenido" id="dis-acumulada">
-                <h3>DIS - Acumulada</h3>
-                <p>Acumulado de rendimiento DIS durante el año actual.</p>
-              <img src="img/logo_HD.png" alt="DIS Acumulada">
-            </div>          
-              <li data-target="mtbf">MTBF</li>
-            <div class="indicador-contenido" id="mtbf">
-                <h3>MTBF</h3>
-                <p>Tiempo medio entre fallos de los equipos monitoreados.</p>
-              <img src="img/logo_HD.png" alt="MTBF">
-            </div>          
-              <li data-target="mtfs">MTFS</li>
-            <div class="indicador-contenido" id="mtfs">
-                <h3>MTFS</h3>
-                <p>Tiempo medio para el fallo de seguridad operacional.</p>
-              <img src="img/logo_HD.png" alt="MTFS">
-            </div>          
-              <li data-target="mtbs">MTBS</li>
-            <div class="indicador-contenido" id="mtbs">
-                <h3>MTBS</h3>
-                <p>Tiempo medio entre mantenimientos básicos.</p>
-              <img src="img/logo_HD.png" alt="MTBS">
-            </div>          
-              <li data-target="imprevisto">Imprevistos</li>
-            <div class="indicador-contenido" id="imprevisto">
-               <h3>Imprevistos</h3>
-               <p>Eventos no programados que afectaron la operación.</p>
-              <img src="img/logo_HD.png" alt="Imprevistos">
-            </div>           
-            </ul>
-          </div>
-                    <!-- Llamado a la acción -->
-           <div class="cta">
-             <a href="#re" class="btn">!Reporta¡ RE</a>
-		    <a href="#backlog" class="btn">!Reporta¡ BACKLOG</a>
-		    	 <a href="#inspeccion" class="btn">Entrega Inspecciones</a>
-	   	   
-           
-
-       </div> 
-      </section> 
-
-      <section class="slider-nosotros">
-          <div class="container">
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                  <img src="img/pala2.png" alt="" loading="lazy" />
-                  <p><strong>Compromiso</strong>: Nos dedicamos con pasión a cada proyecto.</p>
-                </div>
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                  <img src="img/cargue2.png" alt="" loading="lazy" />
-                  <p><strong>Trabajo en equipo</strong>: La colaboración es nuestra base.</p>
-                </div>
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                  <img src="img/procontours2.png" alt="" loading="lazy" />
-                  <p><strong>Innovación</strong>: Buscamos siempre mejorar y evolucionar.</p>
-                </div>
-                <!-- Slide 4 -->
-                <div class="swiper-slide">
-                  <img src="img/thermal1.png" alt="" loading="lazy" />
-                  <p><strong>Seguridad</strong>: Cuidamos a nuestro equipo en cada paso.</p>
-                </div>
-              </div>
-
-              <!-- Paginación -->
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-        </section>
-
-        <section id="nosotros" class="nosotros">
-          <div class="container">
-            <div class="nosotros-texto" data-aos="fade-right">
-              <h2>¿Quiénes Somos?</h2>
-              <p>
-                En <strong>MARC PALAS Cerrejón</strong> estamos comprometidos con la excelencia...
-              </p>
-              <p>
-                Con una cultura basada en el respeto, el compromiso y la mejora continua...
-              </p>
-            </div>
-            <div class="nosotros-imagen" data-aos="fade-left">
-              <img src="img/pala800.png" alt="Nuestro equipo" loading="lazy">
-            </div>
-          </div>
-          <div class="nosotros-texto" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-          </div>
-        </section>
-
-                <!-- HTML: Formulario Sección RE -->
-                <!-- RE FORMULARIO -->
-        <section id="seccion-re">
-          <div class="container">
-		<div class="tab-content" id="re">
-	          <h2>Reportes RE</h2>
-	          <form id="reForm">
-	              <label>Fecha: <input type="date" name="fecha" required></label>
-	              <label>Equipo:
-	                <select name="equipo" required>
-	                  <option value="" disabled selected>Seleccione equipo</option>
-	                  <option value="137">137</option>
-	                  <option value="138">138</option>
-	                  <option value="139">139</option>
-	                  <option value="140">140</option>
-	                  <option value="141">141</option>
-	                  <option value="142">142</option>
-	                  <option value="143">143</option>
-	                  <option value="144">144</option>
-	                  <option value="145">145</option>
-	                  <option value="146">146</option>
-	                  <option value="147">147</option>
-	                  <option value="148">148</option>
-	                  <option value="149">149</option>
-	                  <option value="150">150</option>
-	                  <option value="151">151</option>
-	                  <option value="152">152</option>
-	                  <option value="153">153</option>
-	                  <option value="154">154</option>
-	                  <option value="155">155</option>
-	                  <option value="156">156</option>
-	                </select>
+	      <section id="indicadores" class="indicadores">
+	          <div class="container">
+	            <h2>Indicadores</h2>
+	            <ul class="indicadores-menu">
+	              <li data-target="dis-meta">DIS - Meta Mensual</li>
+	            <div class="indicador-contenido" id="dis-meta">
+	              <h3>DIS - Meta Mensual</h3>
+	              <p>Indicador que muestra el rendimiento mensual en relación con la meta establecida.</p>
+	              <img src="img/logo_HD.png" alt="DIS Meta Mensual">
+	            </div>
+	              <li data-target="dis-acumulada">DIS - Acumulada</li>
+	            <div class="indicador-contenido" id="dis-acumulada">
+	                <h3>DIS - Acumulada</h3>
+	                <p>Acumulado de rendimiento DIS durante el año actual.</p>
+	              <img src="img/logo_HD.png" alt="DIS Acumulada">
+	            </div>          
+	              <li data-target="mtbf">MTBF</li>
+	            <div class="indicador-contenido" id="mtbf">
+	                <h3>MTBF</h3>
+	                <p>Tiempo medio entre fallos de los equipos monitoreados.</p>
+	              <img src="img/logo_HD.png" alt="MTBF">
+	            </div>          
+	              <li data-target="mtfs">MTFS</li>
+	            <div class="indicador-contenido" id="mtfs">
+	                <h3>MTFS</h3>
+	                <p>Tiempo medio para el fallo de seguridad operacional.</p>
+	              <img src="img/logo_HD.png" alt="MTFS">
+	            </div>          
+	              <li data-target="mtbs">MTBS</li>
+	            <div class="indicador-contenido" id="mtbs">
+	                <h3>MTBS</h3>
+	                <p>Tiempo medio entre mantenimientos básicos.</p>
+	              <img src="img/logo_HD.png" alt="MTBS">
+	            </div>          
+	              <li data-target="imprevisto">Imprevistos</li>
+	            <div class="indicador-contenido" id="imprevisto">
+	               <h3>Imprevistos</h3>
+	               <p>Eventos no programados que afectaron la operación.</p>
+	              <img src="img/logo_HD.png" alt="Imprevistos">
+	            </div>           
+	            </ul>
+	          </div>
+	                    <!-- Llamado a la acción -->
+	           <div class="cta">
+	             <a href="#re" class="btn">!Reporta¡ RE</a>
+			    <a href="#backlog" class="btn">!Reporta¡ BACKLOG</a>
+			    	 <a href="#inspeccion" class="btn">Entrega Inspecciones</a>
+		   	   
+	           
+	
+	       </div> 
+	      </section> 
+	
+	      <section class="slider-nosotros">
+	          <div class="container">
+	            <div class="swiper mySwiper">
+	              <div class="swiper-wrapper">
+	                <!-- Slide 1 -->
+	                <div class="swiper-slide">
+	                  <img src="img/pala2.png" alt="" loading="lazy" />
+	                  <p><strong>Compromiso</strong>: Nos dedicamos con pasión a cada proyecto.</p>
+	                </div>
+	                <!-- Slide 2 -->
+	                <div class="swiper-slide">
+	                  <img src="img/cargue2.png" alt="" loading="lazy" />
+	                  <p><strong>Trabajo en equipo</strong>: La colaboración es nuestra base.</p>
+	                </div>
+	                <!-- Slide 3 -->
+	                <div class="swiper-slide">
+	                  <img src="img/procontours2.png" alt="" loading="lazy" />
+	                  <p><strong>Innovación</strong>: Buscamos siempre mejorar y evolucionar.</p>
+	                </div>
+	                <!-- Slide 4 -->
+	                <div class="swiper-slide">
+	                  <img src="img/thermal1.png" alt="" loading="lazy" />
+	                  <p><strong>Seguridad</strong>: Cuidamos a nuestro equipo en cada paso.</p>
+	                </div>
+	              </div>
+	
+	              <!-- Paginación -->
+	              <div class="swiper-pagination"></div>
+	            </div>
+	          </div>
+	        </section>
+	
+	        <section id="nosotros" class="nosotros">
+	          <div class="container">
+	            <div class="nosotros-texto" data-aos="fade-right">
+	              <h2>¿Quiénes Somos?</h2>
+	              <p>
+	                En <strong>MARC PALAS Cerrejón</strong> estamos comprometidos con la excelencia...
+	              </p>
+	              <p>
+	                Con una cultura basada en el respeto, el compromiso y la mejora continua...
+	              </p>
+	            </div>
+	            <div class="nosotros-imagen" data-aos="fade-left">
+	              <img src="img/pala800.png" alt="Nuestro equipo" loading="lazy">
+	            </div>
+	          </div>
+	          <div class="nosotros-texto" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+	          </div>
+	        </section>
+	
+	                <!-- HTML: Formulario Sección RE -->
+	                <!-- RE FORMULARIO -->
+	        <section id="seccion-re">
+	          <div class="container">
+			<div class="tab-content" id="re">
+		          <h2>Reportes RE</h2>
+		          <form id="reForm">
+		              <label>Fecha: <input type="date" name="fecha" required></label>
+		              <label>Equipo:
+		                <select name="equipo" required>
+		                  <option value="" disabled selected>Seleccione equipo</option>
+		                  <option value="137">137</option>
+		                  <option value="138">138</option>
+		                  <option value="139">139</option>
+		                  <option value="140">140</option>
+		                  <option value="141">141</option>
+		                  <option value="142">142</option>
+		                  <option value="143">143</option>
+		                  <option value="144">144</option>
+		                  <option value="145">145</option>
+		                  <option value="146">146</option>
+		                  <option value="147">147</option>
+		                  <option value="148">148</option>
+		                  <option value="149">149</option>
+		                  <option value="150">150</option>
+		                  <option value="151">151</option>
+		                  <option value="152">152</option>
+		                  <option value="153">153</option>
+		                  <option value="154">154</option>
+		                  <option value="155">155</option>
+		                  <option value="156">156</option>
+		                </select>
+		              <label>Descripción:
+		                <textarea name="descripcion" rows="3" required></textarea>
+		              </label>
+		
+		              <label>Parte: <input type="text" name="parte" placeholder="Si no tiene (No o Ningúna)" required></label>
+				      
+		              <label>Prioridad:
+		                <select name="prioridad" required>
+		                  <option value="P1">P1</option>
+		
+		                </select>
+		              </label>
+				      
+		              <label>Responsable: <input type="text" name="responsable" required></label>
+		
+		              <label>Turno:
+		                <select name="turno" required>
+		                  <option value="A1">A1</option>
+		                  <option value="A2">A2</option>
+		                </select>
+		              </label>
+		
+		              <label>Grupo:
+		                <select name="grupo" required>
+		                  <option value="G1">G1</option>
+		                  <option value="G2">G2</option>
+		                  <option value="G3">G3</option>
+		                </select>
+		              </label>
+		
+		              <label>Acción:
+		                <select name="accion" required>
+		                  <option value="Abierta">Abierta</option>
+		                  <option value="Cerrada">Cerrada</option>
+		                </select>
+				      
+		              </label>
+				      
+				<label>Imagen:
+	  				<input type="file" name="imagen" accept="image/*" required capture="environment">
+				</label>
+	
+		
+		            <button type="submit">Enviar</button>
+		          </form>
+		          </div>
+			</div>
+			 <!-- RE TABLA -->
+			</section>
+	        <section>
+		          <h2>Registros de RE</h2>
+		          <div class="container">
+		          <table id="reTable" border="1">
+		            <thead>
+		              <tr>
+		                <th>Fecha</th>
+		                <th>Equipo</th>
+		                <th>Descripción</th>
+		                <th>Parte</th>
+				<th>Prioridad</th>
+		                <th>Responsable</th>
+		                <th>Turno</th>
+		                <th>Grupo</th>
+		                <th>Acción</th>
+				<th>Imagen</th>
+		              </tr>
+		            </thead>
+		            <tbody>
+		              <!-- Aquí se insertarán las filas dinámicamente -->
+		            </tbody>
+		          </table>
+		          </div>
+		     </section>
+	
+	       
+	        
+	
+	              <section id="backlog">
+	                <div class="container">
+	                  <h2>Reporte de backlog.</h2>
+	                  <form id="backlogForm">
+	                    <label>Fecha: <input type="date" name="fecha" required></label>
+	                    <label>Equipo:
+	                      <select name="equipo" required>
+	                        <option value="" disabled selected>Seleccione equipo</option>
+	                        <option value="137">137</option>
+	                        <option value="138">138</option>
+	                        <option value="139">139</option>
+	                        <option value="140">140</option>
+	                        <option value="141">141</option>
+	                        <option value="142">142</option>
+	                        <option value="143">143</option>
+	                        <option value="144">144</option>
+	                        <option value="145">145</option>
+	                        <option value="146">146</option>
+	                        <option value="147">147</option>
+	                        <option value="148">148</option>
+	                        <option value="149">149</option>
+	                        <option value="150">150</option>
+	                        <option value="151">151</option>
+	                        <option value="152">152</option>
+	                        <option value="153">153</option>
+	                        <option value="154">154</option>
+	                        <option value="155">155</option>
+	                        <option value="156">156</option>
+	                      </select>
+	                    </label>
+	
 	              <label>Descripción:
 	                <textarea name="descripcion" rows="3" required></textarea>
 	              </label>
 	
-	              <label>Parte: <input type="text" name="parte" placeholder="Si no tiene (No o Ningúna)" required></label>
-			      
-	              <label>Prioridad:
-	                <select name="prioridad" required>
-	                  <option value="P1">P1</option>
+	              <label>Parte: <input type="text" name="parte" placeholder="Si no tiene colocar (No o Ningúna)" required></label>
 	
+	              <label>Prioridad:
+	                <select name="turno" required>
+	                  <option value="P1">P1</option>
+	                  <option value="P2">P2</option>
+	                  <option value="P3">P3</option>
+	                  <option value="P4">P4</option>
 	                </select>
 	              </label>
-			      
+	
 	              <label>Responsable: <input type="text" name="responsable" required></label>
 	
 	              <label>Turno:
@@ -229,152 +339,44 @@
 	                  <option value="Abierta">Abierta</option>
 	                  <option value="Cerrada">Cerrada</option>
 	                </select>
-			      
 	              </label>
-			      
+				  
+		      </label>
+				  
 			<label>Imagen:
-  				<input type="file" name="imagen" accept="image/*" required capture="environment">
+	  			<input type="file" name="imagen" accept="image/*" capture="environment">
 			</label>
-
+				  
+	              <button type="submit">Enviar BACKLOG</button>
+	            </form>
+	                </div>
 	
-	            <button type="submit">Enviar</button>
-	          </form>
-	          </div>
-		</div>
-		 <!-- RE TABLA -->
-		</section>
-        <section>
-	          <h2>Registros de RE</h2>
-	          <div class="container">
-	          <table id="reTable" border="1">
-	            <thead>
-	              <tr>
-	                <th>Fecha</th>
-	                <th>Equipo</th>
-	                <th>Descripción</th>
-	                <th>Parte</th>
-			<th>Prioridad</th>
-	                <th>Responsable</th>
-	                <th>Turno</th>
-	                <th>Grupo</th>
-	                <th>Acción</th>
-			<th>Imagen</th>
-	              </tr>
-	            </thead>
-	            <tbody>
-	              <!-- Aquí se insertarán las filas dinámicamente -->
-	            </tbody>
-	          </table>
-	          </div>
-	     </section>
-
-       
-        
-
-              <section id="backlog">
-                <div class="container">
-                  <h2>Reporte de backlog.</h2>
-                  <form id="backlogForm">
-                    <label>Fecha: <input type="date" name="fecha" required></label>
-                    <label>Equipo:
-                      <select name="equipo" required>
-                        <option value="" disabled selected>Seleccione equipo</option>
-                        <option value="137">137</option>
-                        <option value="138">138</option>
-                        <option value="139">139</option>
-                        <option value="140">140</option>
-                        <option value="141">141</option>
-                        <option value="142">142</option>
-                        <option value="143">143</option>
-                        <option value="144">144</option>
-                        <option value="145">145</option>
-                        <option value="146">146</option>
-                        <option value="147">147</option>
-                        <option value="148">148</option>
-                        <option value="149">149</option>
-                        <option value="150">150</option>
-                        <option value="151">151</option>
-                        <option value="152">152</option>
-                        <option value="153">153</option>
-                        <option value="154">154</option>
-                        <option value="155">155</option>
-                        <option value="156">156</option>
-                      </select>
-                    </label>
-
-              <label>Descripción:
-                <textarea name="descripcion" rows="3" required></textarea>
-              </label>
-
-              <label>Parte: <input type="text" name="parte" placeholder="Si no tiene colocar (No o Ningúna)" required></label>
-
-              <label>Prioridad:
-                <select name="turno" required>
-                  <option value="P1">P1</option>
-                  <option value="P2">P2</option>
-                  <option value="P3">P3</option>
-                  <option value="P4">P4</option>
-                </select>
-              </label>
-
-              <label>Responsable: <input type="text" name="responsable" required></label>
-
-              <label>Turno:
-                <select name="turno" required>
-                  <option value="A1">A1</option>
-                  <option value="A2">A2</option>
-                </select>
-              </label>
-
-              <label>Grupo:
-                <select name="grupo" required>
-                  <option value="G1">G1</option>
-                  <option value="G2">G2</option>
-                  <option value="G3">G3</option>
-                </select>
-              </label>
-
-              <label>Acción:
-                <select name="accion" required>
-                  <option value="Abierta">Abierta</option>
-                  <option value="Cerrada">Cerrada</option>
-                </select>
-              </label>
-			  
-	      </label>
-		<label>Imagen:
-  			<input type="file" name="imagen" accept="image/*" capture="environment">
-		</label>
-			  
-              <button type="submit">Enviar BACKLOG</button>
-            </form>
-                </div>
-
-		<!-- RE TABLA -->
-        
-	          <h2>Registros de BACKLOG</h2>
-	          <div class="container">
-	          <table id="backlogTable" border="1">
-	            <thead>
-	              <tr>
-	                <th>Fecha</th>
-	                <th>Equipo</th>
-	                <th>Descripción</th>
-	                <th>Parte</th>
-			<th>Prioridad</th>
-	                <th>Responsable</th>
-	                <th>Turno</th>
-	                <th>Grupo</th>
-	                <th>Acción</th>
-	              </tr>
-	            </thead>
-	            <tbody>
-	              <!-- Aquí se insertarán las filas dinámicamente -->
-	            </tbody>
-	          </table>
-	          </div>
-              
-            </section>
+			<!-- RE TABLA -->
+	        
+		          <h2>Registros de BACKLOG</h2>
+		          <div class="container">
+		          <table id="backlogTable" border="1">
+		            <thead>
+		              <tr>
+		                <th>Fecha</th>
+		                <th>Equipo</th>
+		                <th>Descripción</th>
+		                <th>Parte</th>
+				<th>Prioridad</th>
+		                <th>Responsable</th>
+		                <th>Turno</th>
+		                <th>Grupo</th>
+		                <th>Acción</th>
+				<th>Imagenn</th>
+		              </tr>
+		            </thead>
+		            <tbody>
+		              <!-- Aquí se insertarán las filas dinámicamente -->
+		            </tbody>
+		          </table>
+		          </div>
+	              
+	            </section>
 
         
 
