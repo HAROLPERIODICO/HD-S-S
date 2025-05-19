@@ -167,7 +167,7 @@
         <section id="seccion-re">
           <div class="container">
 		<div class="tab-content" id="re">
-	          <h2>Formulario RE</h2>
+	          <h2>Reportes RE</h2>
 	          <form id="reForm">
 	              <label>Fecha: <input type="date" name="fecha" required></label>
 	              <label>Equipo:
@@ -229,11 +229,12 @@
 	                  <option value="Abierta">Abierta</option>
 	                  <option value="Cerrada">Cerrada</option>
 	                </select>
+			      
 	              </label>
-			<label>Foto (opcional):
- 			 <input type="file" name="foto" accept="image/*" capture="environment">
+			      
+			<label>Imagen (opcional):
+			  <input type="file" name="imagen">
 			</label>
-
 	
 	            <button type="submit">Enviar</button>
 	          </form>
@@ -241,7 +242,7 @@
 		</div>
 		 <!-- RE TABLA -->
         
-	          <h2>Registros RE</h2>
+	          <h2>Registros de RE</h2>
 	          <div class="container">
 	          <table id="reTable" border="1">
 	            <thead>
@@ -255,6 +256,7 @@
 	                <th>Turno</th>
 	                <th>Grupo</th>
 	                <th>Acción</th>
+			<th>Imagen</th>
 	              </tr>
 	            </thead>
 	            <tbody>
@@ -269,7 +271,7 @@
 
               <section id="backlog">
                 <div class="container">
-                  <h2>Formulario para reportar el backlog de los equipos.</h2>
+                  <h2>Reporte de backlog.</h2>
                   <form id="backlogForm">
                     <label>Fecha: <input type="date" name="fecha" required></label>
                     <label>Equipo:
@@ -336,40 +338,39 @@
                   <option value="Cerrada">Cerrada</option>
                 </select>
               </label>
-
+			  
+	      </label>
+		<label>Foto (opcional):
+ 		<input type="file" name="foto" accept="image/*" capture="environment">
+	      </label>		
+			  
               <button type="submit">Enviar BACKLOG</button>
             </form>
-           <!-- <p>Tabla para visualizar el backlog reportado.</p>
-            <p>Esta tabla se actualiza automáticamente al enviar el formulario.</p>     
-            <h2>Tabla BACKLOG</h2>
-           <table id="dataTable">
-              <thead>
-                <tr>
-                  <th>Fecha</th><th>Equipo</th><th>Descripción</th><th>ParteNUMERO</th><th>Prioridad</th><th>Responsable</th><th>Turno</th><th>Grupo</th><th>Acción</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>-->
                 </div>
 
-                <div class="table-responsive">
-                  <table id="backlogTable">
-                    <thead>
-                      <tr>
-                        <th>Fecha</th>
-                        <th>Equipo</th>
-                        <th>Descripción</th>
-                        <th>Parte</th>
-                        <th>Prioridad</th>
-                        <th>Responsable</th>
-                        <th>Turno</th>
-                        <th>Grupo</th>
-                        <th>Acción</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                </div>
+		<!-- RE TABLA -->
+        
+	          <h2>Registros de BACKLOG</h2>
+	          <div class="container">
+	          <table id="backlogTable" border="1">
+	            <thead>
+	              <tr>
+	                <th>Fecha</th>
+	                <th>Equipo</th>
+	                <th>Descripción</th>
+	                <th>Parte</th>
+			<th>Prioridad</th>
+	                <th>Responsable</th>
+	                <th>Turno</th>
+	                <th>Grupo</th>
+	                <th>Acción</th>
+	              </tr>
+	            </thead>
+	            <tbody>
+	              <!-- Aquí se insertarán las filas dinámicamente -->
+	            </tbody>
+	          </table>
+	          </div>
               
             </section>
 
