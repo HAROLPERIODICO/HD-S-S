@@ -2,7 +2,7 @@
 // Description: JavaScript code to handle the backlog form submission and data display
 const reForm = document.getElementById('reForm');
 const reTableBody = document.querySelector('#reTable tbody');
-const reWebhookUrl = 'https://script.google.com/macros/s/AKfycby1eiYh_S4JMY48EQdfnz7YMuecE4W9HOU-w3K_PPU-DvO1k9Ona2toaAC_FfqizR75/exec'; // Pega tu URL aquí
+const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbzuoCxfrtr9SWeSpTtl-l4Z2cufs7rMW3k92j4QQL2UzRJa08HRRhAAez2ztQsCLm0A/exec'; // ← Reemplaza con tu URL de implementación
 
 function agregarFilaRE(data) {
   const row = document.createElement('tr');
@@ -18,10 +18,10 @@ async function cargarDatosRE() {
   try {
     const response = await fetch(reWebhookUrl);
     const registros = await response.json();
-    reTableBody.innerHTML = '';
+    reTableBody.innerHTML = ''; // Limpiar tabla
     registros.forEach(agregarFilaRE);
   } catch (error) {
-    console.error('Error al cargar registros:', error);
+    console.error('Error al cargar registros RE:', error);
   }
 }
 
@@ -41,12 +41,11 @@ reForm.addEventListener('submit', async function (e) {
     agregarFilaRE(data);
     reForm.reset();
   } catch (error) {
-    console.error('Error al enviar datos:', error);
+    console.error('Error al enviar datos RE:', error);
   }
 });
 
 document.addEventListener('DOMContentLoaded', cargarDatosRE);
-// File: js/re.js
-// Description: JavaScript code to handle the backlog form submission and data display
+
 
         
