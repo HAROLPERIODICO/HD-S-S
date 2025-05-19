@@ -74,4 +74,8 @@ function aplicarFiltrosRE() {
     row.style.display = match ? '' : 'none';
   });
 }
+['filtroEquipo', 'filtroGrupo', 'filtroPrioridad', 'filtroTurno', 'filtroAccion', 'filtroFecha']
+  .forEach(id => {
+    document.getElementById(id).addEventListener('change', aplicarFiltrosRE);
+  });
 
