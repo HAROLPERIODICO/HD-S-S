@@ -378,9 +378,23 @@
   margin-bottom: 2rem;
   font-size: 2rem;
 }
+.seccion-re {
+  padding: 4rem 1rem;
+  background-color: #fffaf5;
+  color: #333;
+  max-width: 800px;
+  margin: auto;
+}
+
+.seccion-re h2 {
+  text-align: center;
+  color: #fb0505;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
 
 /* Estilo del formulario */
-#reForm {
+#form-re {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -390,13 +404,13 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#reForm label {
+#form-re label {
   font-weight: bold;
   color: #555;
 }
 
-#reForm input,
-#reForm textarea {
+#form-re input,
+#form-re textarea {
   padding: 0.7rem 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -404,14 +418,14 @@
   transition: border-color 0.3s ease;
 }
 
-#reForm input:focus,
-#reForm textarea:focus {
+#form-re input:focus,
+#form-re textarea:focus {
   border-color: #fb0505;
   outline: none;
 }
 
 /* Botón de envío */
-#reForm button[type="submit"] {
+#form-re button[type="submit"] {
   background-color: #fb0505;
   color: #fff;
   padding: 0.8rem 1.5rem;
@@ -423,7 +437,7 @@
   transition: background-color 0.3s ease;
 }
 
-#reForm button[type="submit"]:hover {
+#form-re button[type="submit"]:hover {
   background-color: #c90404;
 }
 
@@ -442,147 +456,10 @@
     padding: 2rem 1rem;
   }
 
-  #reForm {
+  #form-re {
     padding: 1.5rem;
   }
 }
-
-.tabla-re {
-  padding: 3rem 1rem;
-  background-color: #fff;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
-}
-
-.tabla-re h2 {
-  color: #fb0505;
-  margin-bottom: 1.5rem;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 1rem;
-}
-
-form input, form button {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-form button {
-  background-color: #ff3b3b;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #cc2f2f;
-}
-
-/* style.css */
-#form-re, .re-table {
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-#form-re input, #form-re select, #form-re button {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin: 10px 0;
-}
-
-.re-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.re-table th, .re-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
-}
-
-.re-table th {
-  background-color: #f4f4f4;
-}
-
-  #tabla_re_chart {
-    overflow-x: auto;
-  }
-
-  .re-table {
-    border-collapse: collapse;
-    width: 100%;
-    min-width: 900px; /* Asegura que la tabla no se comprima */
-  }
-
-  .re-table th, .re-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-  }
-
-  .re-table th {
-    background-color: #f4f4f4;
-  }
-
-
-
-/* ============================
-     FORMULARIO RE 
-============================*/
-  #form-re, .re-table {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-  }
-
-  #form-re input, #form-re select, #form-re button {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-  }
-
-  .re-table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  .re-table th, .re-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-  }
-
-  .re-table th {
-    background-color: #f4f4f4;
-  }
-  #tabla_re_chart {
-    overflow-x: auto;
-  }
-  .re-table {
-    border-collapse: collapse;
-    width: 100%;
-    min-width: 900px; /* Asegura que la tabla no se comprima */
-  }
-  .re-table th, .re-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-  }
-  .re-table th {
-    background-color: #f4f4f4;
-  }
-  
-
 
 
   /* ============================
