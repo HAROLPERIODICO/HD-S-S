@@ -11,7 +11,7 @@ function agregarFilaBACKLOG(data) {
     td.textContent = data[key] || '';
     row.appendChild(td);
   });
-  reTableBody.appendChild(row);
+  backlogTableBody.appendChild(row);
 }
 
 async function cargarDatosBACKLOG() {
