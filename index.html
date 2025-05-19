@@ -256,19 +256,42 @@
 		          <div class="container">
 		          <table id="reTable" border="1">
 		            <thead>
-		              <tr>
-		                <th>Fecha</th>
-		                <th>Equipo</th>
-		                <th>Descripción</th>
-		                <th>Parte</th>
-				<th>Prioridad</th>
-		                <th>Responsable</th>
-		                <th>Turno</th>
-		                <th>Grupo</th>
-		                <th>Acción</th>
-				<th>Imagen</th>
-		              </tr>
-		            </thead>
+				  <tr>
+				    <th>
+				      Fecha<br>
+				      <input type="date" id="filtroFecha">
+				    </th>
+				    <th>
+				      Equipo<br>
+				      <select id="filtroEquipo"><option value="">Todos</option></select>
+				    </th>
+				    <th>Descripción</th>
+				    <th>Parte</th>
+				    <th>
+				      Prioridad<br>
+				      <select id="filtroPrioridad"><option value="">Todas</option></select>
+				    </th>
+				    <th>Responsable</th>
+				    <th>
+				      Turno<br>
+				      <select id="filtroTurno"><option value="">Todos</option></select>
+				    </th>
+				    <th>
+				      Grupo<br>
+				      <select id="filtroGrupo"><option value="">Todos</option></select>
+				    </th>
+				    <th>
+				      Acción<br>
+				      <select id="filtroAccion">
+				        <option value="">Todas</option>
+				        <option value="Abierta">Abierta</option>
+				        <option value="Cerrada">Cerrada</option>
+				      </select>
+				    </th>
+				    <th>Imagen</th>
+				  </tr>
+				</thead>
+
 		            <tbody>
 		              <!-- Aquí se insertarán las filas dinámicamente -->
 		            </tbody>
@@ -373,20 +396,43 @@
 		          <div class="container">
 			    <div class="table-container">
 		          <table id="backlogTable" border="1">
-		            <thead>
-		              <tr>
-		                <th>Fecha</th>
-		                <th>Equipo</th>
-		                <th>Descripción</th>
-		                <th>Parte</th>
-				<th>Prioridad</th>
-		                <th>Responsable</th>
-		                <th>Turno</th>
-		                <th>Grupo</th>
-		                <th>Acción</th>
-				<th>Imagen</th>
-		              </tr>
-		            </thead>
+				<thead>
+				  <tr>
+				    <th>
+				      Fecha<br>
+				      <input type="date" id="filtroFecha">
+				    </th>
+				    <th>
+				      Equipo<br>
+				      <select id="filtroEquipo"><option value="">Todos</option></select>
+				    </th>
+				    <th>Descripción</th>
+				    <th>Parte</th>
+				    <th>
+				      Prioridad<br>
+				      <select id="filtroPrioridad"><option value="">Todas</option></select>
+				    </th>
+				    <th>Responsable</th>
+				    <th>
+				      Turno<br>
+				      <select id="filtroTurno"><option value="">Todos</option></select>
+				    </th>
+				    <th>
+				      Grupo<br>
+				      <select id="filtroGrupo"><option value="">Todos</option></select>
+				    </th>
+				    <th>
+				      Acción<br>
+				      <select id="filtroAccion">
+				        <option value="">Todas</option>
+				        <option value="Abierta">Abierta</option>
+				        <option value="Cerrada">Cerrada</option>
+				      </select>
+				    </th>
+				    <th>Imagen</th>
+				  </tr>
+				</thead>
+
 		            <tbody>
 		              <!-- Aquí se insertarán las filas dinámicamente -->
 		            </tbody>
