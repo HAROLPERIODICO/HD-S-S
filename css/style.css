@@ -364,66 +364,94 @@
   /* ============================
      RE 
   ============================ */
-.seccion-re {
-  padding: 4rem 1rem;
-  background-color: #fffaf5;
-  color: #333;
-  max-width: 800px;
-  margin: auto;
+
+/* Contenedor */
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.seccion-re h2 {
+/* Título */
+h2 {
   text-align: center;
-  color: #fb0505;
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1e88e5;
 }
 
-/* Estilo del formulario */
+/* Formulario */
 form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+form label {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
-form input, form button {
+form input,
+form select,
+form textarea {
+  margin-top: 5px;
   padding: 8px;
-  border-radius: 5px;
   border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 form button {
-  background-color: #ff3b3b;
+  grid-column: span 2;
+  padding: 10px;
+  background: #1e88e5;
   color: white;
-  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
 }
 
 form button:hover {
-  background-color: #cc2f2f;
+  background: #1565c0;
 }
 
-/* Mensaje de éxito */
-#mensaje-exito {
-  text-align: center;
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-  color: green;
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead {
+  background: #1e88e5;
+  color: white;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: #f1f1f1;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .seccion-re {
-    padding: 2rem 1rem;
+  form {
+    grid-template-columns: 1fr;
   }
 
-  #re-form {
-    padding: 1.5rem;
+  th, td {
+    font-size: 13px;
   }
 }
-
 
   /* ============================
      BACKLOG
