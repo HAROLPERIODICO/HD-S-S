@@ -2,7 +2,7 @@
 // Description: JavaScript code to handle the backlog form submission and data display
 const reForm = document.getElementById('reForm');
 const reTableBody = document.querySelector('#reTable tbody');
-const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbzuoCxfrtr9SWeSpTtl-l4Z2cufs7rMW3k92j4QQL2UzRJa08HRRhAAez2ztQsCLm0A/exec'; // ← Reemplaza con tu URL de implementación
+const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbxZvIrWFXRoKkjmRvo6B1NWmyidLpJzK9M7SeiDfuzLUxrqdjogahI1vtAIPf1b5YnL/exec'; // ← Reemplaza con tu URL de implementación
 
 function agregarFilaRE(data) {
   const row = document.createElement('tr');
@@ -30,6 +30,21 @@ reForm.addEventListener('submit', async function (e) {
   const formData = new FormData(reForm);
   const data = Object.fromEntries(formData.entries());
 
+  // Convertir imagen a base64 si existe
+  const file = formData.get('foto');
+  if (file && file.size > 0) {
+    const reader = new FileReader();
+    reader.onloadend = async function () {
+      data.foto = reader.result; // Base64
+      await enviarDatosRE(data);
+    };
+    reader.readAsDataURL(file);
+  } else {
+    await enviarDatosRE(data);
+  }
+});
+
+async function enviarDatosRE(data) {
   try {
     await fetch(reWebhookUrl, {
       method: 'POST',
@@ -43,7 +58,8 @@ reForm.addEventListener('submit', async function (e) {
   } catch (error) {
     console.error('Error al enviar datos RE:', error);
   }
-});
+}
+
 
 document.addEventListener('DOMContentLoaded', cargarDatosRE);
 
