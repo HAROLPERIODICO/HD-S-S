@@ -428,12 +428,13 @@ tbody tr:nth-child(even) {
   th, td {
     font-size: 5px;
   }
-    /* Tabla */
-   table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-   }
+    .tabla-backlog {
+  padding: 3rem 1rem;
+  background-color: #fff;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
 }
 
   /* ============================
@@ -525,7 +526,7 @@ tbody tr:nth-child(even) {
 .tabla-backlog {
   padding: 3rem 1rem;
   background-color: #fff;
-  max-width: 1000px;
+  max-width: 500px;
   margin: auto;
   text-align: center;
 }
