@@ -357,173 +357,171 @@
 		          </div>
 			</div>
 		     </section>
-	
-	       
-	        
+	      
 	
 	              <section id="backlog">
 			<div class="container">
-	                  <h2>Reporte de backlog.</h2>
-			  <div class="table-container">    
-	                  <form id="backlogForm">
-	                    <label>Fecha: <input type="date" name="fecha" required></label>
-	                    <label>Equipo:
-	                      <select name="equipo" required>
-	                        <option value="" disabled selected>Seleccione equipo</option>
-	                        <option value="137">137</option>
-	                        <option value="138">138</option>
-	                        <option value="139">139</option>
-	                        <option value="140">140</option>
-	                        <option value="141">141</option>
-	                        <option value="142">142</option>
-	                        <option value="143">143</option>
-	                        <option value="144">144</option>
-	                        <option value="145">145</option>
-	                        <option value="146">146</option>
-	                        <option value="147">147</option>
-	                        <option value="148">148</option>
-	                        <option value="149">149</option>
-	                        <option value="150">150</option>
-	                        <option value="151">151</option>
-	                        <option value="152">152</option>
-	                        <option value="153">153</option>
-	                        <option value="154">154</option>
-	                        <option value="155">155</option>
-	                        <option value="156">156</option>
-	                      </select>
-	                    </label>
+			  <div class="tab-content" id="backlog">
+			    <h2>Reporte de backlog.</h2> 
+		                  <form id="backlogForm" enctype="multipart/form-data">
+		                    <label>Fecha: <input type="date" name="fecha" required></label>
+		                    <label>Equipo:
+		                      <select name="equipo" required>
+		                        <option value="" disabled selected>Seleccione equipo</option>
+		                        <option value="137">137</option>
+		                        <option value="138">138</option>
+		                        <option value="139">139</option>
+		                        <option value="140">140</option>
+		                        <option value="141">141</option>
+		                        <option value="142">142</option>
+		                        <option value="143">143</option>
+		                        <option value="144">144</option>
+		                        <option value="145">145</option>
+		                        <option value="146">146</option>
+		                        <option value="147">147</option>
+		                        <option value="148">148</option>
+		                        <option value="149">149</option>
+		                        <option value="150">150</option>
+		                        <option value="151">151</option>
+		                        <option value="152">152</option>
+		                        <option value="153">153</option>
+		                        <option value="154">154</option>
+		                        <option value="155">155</option>
+		                        <option value="156">156</option>
+		                      </select>
+		                    </label>
+		
+			              <label>Descripción:
+			                <textarea name="descripcion" rows="3" required></textarea>
+			              </label>
+			
+			              <label>Parte: <input type="text" name="parte" placeholder="Si no tiene colocar (No o Ningúna)" required></label>
+			
+			              <label>Prioridad:
+			                <select name="turno" required>
+			                  <option value="P1">P1</option>
+			                  <option value="P2">P2</option>
+			                  <option value="P3">P3</option>
+			                  <option value="P4">P4</option>
+			                </select>
+			              </label>
+			
+			              <label>Responsable: <input type="text" name="responsable" required></label>
+			
+			              <label>Turno:
+			                <select name="turno" required>
+			                  <option value="A1">A1</option>
+			                  <option value="A2">A2</option>
+			                </select>
+			              </label>
+			
+			              <label>Grupo:
+			                <select name="grupo" required>
+			                  <option value="G1">G1</option>
+			                  <option value="G2">G2</option>
+			                  <option value="G3">G3</option>
+			                </select>
+			              </label>
+			
+			              <label>Acción:
+			                <select name="accion" required>
+			                  <option value="Abierta">Abierta</option>
+			                  <option value="Cerrada">Cerrada</option>
+			                </select>
+			              </label>
+						  
+				      </label>
+						  
+					<label>Imagen:
+			  			<input type="file" name="imagen" accept="image/*" capture="environment">
+					</label>
+						  
+			              <button type="submit">Enviar BACKLOG</button>
+			            </form>
+		                </div>
+			
+		    
+				<!-- BACKLOG TABLA -->
+		        
+			          <h2>Registros de BACKLOG</h2>
+			         
+				    <div class="table-container">
+			          <table id="backlogTable" border="2">
+					<thead>
+					  <tr>
+					    <th>
+					      Fecha<br>
+					      <input type="date" id="filtroFecha">
+					    </th>
+					    <th>
+					      Equipo<br>
+					    <select id="filtroEquipo">
+					      	<option value="">Todas</option>
+					        <option value="137">137</option>
+					        <option value="138">138</option>
+						<option value="139">139</option>
+					        <option value="140">140</option>
+					        <option value="141">141</option>
+						<option value="142">142</option>
+					        <option value="143">143</option>				       
+					        <option value="144">144</option>
+					        <option value="145">145</option>
+						<option value="146">146</option>
+					        <option value="147">147</option>
+					        <option value="148">148</option>
+					        <option value="149">149</option>
+						<option value="150">150</option>
+					        <option value="151">151</option>
+					        <option value="152">152</option>
+					        <option value="153">153</option>
+						<option value="154">154</option>
+					        <option value="155">155</option>
+					    </th>
+					    <th>Descripción</th>
+					    <th>Parte</th>
+					    <th>
+					      Prioridad<br>
+					    <select id="filtroPrioridad">
+					      	<option value="">Todas</option>
+					        <option value="P1">P1</option>
+					        <option value="P2">P2</option>
+						<option value="P3">P3</option>
+					        <option value="P4">P4</option>
+					    </th>
+					    <th>Responsable</th>
+					    <th>
+					      <select id="filtroTurno">
+					        <option value="">Todas</option>
+					        <option value="A1">A1</option>
+					        <option value="A2">A2</option>
+					    </th>
+					    <th>
+					      Grupo<br>
+					      <select id="filtroGrupo">
+					        <option value="">Todas</option>
+					        <option value="G1">G1</option>
+					        <option value="G2">G2</option>
+						<option value="G3">G3</option>
+					    </th>
+					    <th>
+					      Acción<br>
+					      <select id="filtroAccion">
+					        <option value="">Todas</option>
+					        <option value="Abierta">Abierta</option>
+					        <option value="Cerrada">Cerrada</option>
+					      </select>
+					    </th>
+					    <th>Imagen</th>
+					  </tr>
+					</thead>
 	
-		              <label>Descripción:
-		                <textarea name="descripcion" rows="3" required></textarea>
-		              </label>
-		
-		              <label>Parte: <input type="text" name="parte" placeholder="Si no tiene colocar (No o Ningúna)" required></label>
-		
-		              <label>Prioridad:
-		                <select name="turno" required>
-		                  <option value="P1">P1</option>
-		                  <option value="P2">P2</option>
-		                  <option value="P3">P3</option>
-		                  <option value="P4">P4</option>
-		                </select>
-		              </label>
-		
-		              <label>Responsable: <input type="text" name="responsable" required></label>
-		
-		              <label>Turno:
-		                <select name="turno" required>
-		                  <option value="A1">A1</option>
-		                  <option value="A2">A2</option>
-		                </select>
-		              </label>
-		
-		              <label>Grupo:
-		                <select name="grupo" required>
-		                  <option value="G1">G1</option>
-		                  <option value="G2">G2</option>
-		                  <option value="G3">G3</option>
-		                </select>
-		              </label>
-		
-		              <label>Acción:
-		                <select name="accion" required>
-		                  <option value="Abierta">Abierta</option>
-		                  <option value="Cerrada">Cerrada</option>
-		                </select>
-		              </label>
-					  
-			      </label>
-					  
-				<label>Imagen:
-		  			<input type="file" name="imagen" accept="image/*" capture="environment">
-				</label>
-					  
-		              <button type="submit">Enviar BACKLOG</button>
-		            </form>
-	                </div>
-		
-	    
-			<!-- BACKLOG TABLA -->
-	        
-		          <h2>Registros de BACKLOG</h2>
-		         
-			    <div class="table-container">
-		          <table id="backlogTable" border="2">
-				<thead>
-				  <tr>
-				    <th>
-				      Fecha<br>
-				      <input type="date" id="filtroFecha">
-				    </th>
-				    <th>
-				      Equipo<br>
-				    <select id="filtroEquipo">
-				      	<option value="">Todas</option>
-				        <option value="137">137</option>
-				        <option value="138">138</option>
-					<option value="139">139</option>
-				        <option value="140">140</option>
-				        <option value="141">141</option>
-					<option value="142">142</option>
-				        <option value="143">143</option>				       
-				        <option value="144">144</option>
-				        <option value="145">145</option>
-					<option value="146">146</option>
-				        <option value="147">147</option>
-				        <option value="148">148</option>
-				        <option value="149">149</option>
-					<option value="150">150</option>
-				        <option value="151">151</option>
-				        <option value="152">152</option>
-				        <option value="153">153</option>
-					<option value="154">154</option>
-				        <option value="155">155</option>
-				    </th>
-				    <th>Descripción</th>
-				    <th>Parte</th>
-				    <th>
-				      Prioridad<br>
-				    <select id="filtroPrioridad">
-				      	<option value="">Todas</option>
-				        <option value="P1">P1</option>
-				        <option value="P2">P2</option>
-					<option value="P3">P3</option>
-				        <option value="P4">P4</option>
-				    </th>
-				    <th>Responsable</th>
-				    <th>
-				      <select id="filtroTurno">
-				        <option value="">Todas</option>
-				        <option value="A1">A1</option>
-				        <option value="A2">A2</option>
-				    </th>
-				    <th>
-				      Grupo<br>
-				      <select id="filtroGrupo">
-				        <option value="">Todas</option>
-				        <option value="G1">G1</option>
-				        <option value="G2">G2</option>
-					<option value="G3">G3</option>
-				    </th>
-				    <th>
-				      Acción<br>
-				      <select id="filtroAccion">
-				        <option value="">Todas</option>
-				        <option value="Abierta">Abierta</option>
-				        <option value="Cerrada">Cerrada</option>
-				      </select>
-				    </th>
-				    <th>Imagen</th>
-				  </tr>
-				</thead>
-
-		            <tbody>
-		              <!-- Aquí se insertarán las filas dinámicamente -->
-		            </tbody>
-		          </table>
-		          </div>
-			</div>
-	            </section>
+			            <tbody>
+			              <!-- Aquí se insertarán las filas dinámicamente -->
+			            </tbody>
+			          </table>
+			          </div>
+				</div>
+		            </section>
 
         
 
