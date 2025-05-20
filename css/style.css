@@ -362,7 +362,7 @@ h2 {
 /* Formulario */
 form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 15px;
 }
 
@@ -428,7 +428,7 @@ tbody tr:nth-child(even) {
   th, td {
     font-size: 5px;
   }
-    .tabla-backlog {
+    .re-tabla {
   padding: 3rem 1rem;
   background-color: #fff;
   max-width: 500px;
