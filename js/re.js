@@ -59,7 +59,7 @@ function aplicarFiltrosRE() {
   const prioridad = document.getElementById('filtroPrioridad').value.toLowerCase();
   const turno = document.getElementById('filtroTurno').value.toLowerCase();
   const accion = document.getElementById('filtroAccion').value.toLowerCase();
-  const fecha = document.getElementById('filtroFecha').value;
+  
 
   document.querySelectorAll('#reTable tbody tr').forEach(row => {
     const celdas = row.querySelectorAll('td');
@@ -69,12 +69,12 @@ function aplicarFiltrosRE() {
       (grupo === '' || celdas[7].textContent.toLowerCase() === grupo) &&
       (turno === '' || celdas[6].textContent.toLowerCase() === turno) &&
       (accion === '' || celdas[8].textContent.toLowerCase() === accion) &&
-      (fecha === '' || celdas[0].textContent === fecha);
+     
 
     row.style.display = match ? '' : 'none';
   });
 }
-['filtroEquipo', 'filtroGrupo', 'filtroPrioridad', 'filtroTurno', 'filtroAccion', 'filtroFecha']
+['filtroEquipo', 'filtroGrupo', 'filtroPrioridad', 'filtroTurno', 'filtroAccion']
   .forEach(id => {
     document.getElementById(id).addEventListener('change', aplicarFiltrosRE);
   });
