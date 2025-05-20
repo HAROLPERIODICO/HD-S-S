@@ -697,6 +697,10 @@ form button:hover {
   .footer-info p {
     font-size: 13px;
   }
+.header {
+    background-color:  #fffaf5;
+    color: white;
+}
 
   }
 
@@ -734,4 +738,8 @@ form button:hover {
         width: 100%;
         text-align: center;
       }
+     .header {
+        background-color:  #fffaf5;
+        color: white;
+        }
     }
