@@ -434,6 +434,7 @@ tbody tr:nth-child(even) {
   max-width: 500px;
   margin: auto;
   text-align: center;
+  grid-template-columns: 1fr;
 }
 }
 
@@ -739,8 +740,5 @@ form button:hover {
         width: 100%;
         text-align: center;
       }
-     .header {
-        background-color:  #fffaf5;
-        color: white;
-        }
+   
     }
