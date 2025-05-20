@@ -68,7 +68,7 @@ function aplicarFiltrosRE() {
       (prioridad === '' || celdas[4].textContent.toLowerCase() === prioridad) &&
       (grupo === '' || celdas[7].textContent.toLowerCase() === grupo) &&
       (turno === '' || celdas[6].textContent.toLowerCase() === turno) &&
-      (accion === '' || celdas[8].textContent.toLowerCase() === accion) &&
+      (accion === '' || celdas[8].textContent.toLowerCase() === accion)
      
 
     row.style.display = match ? '' : 'none';
