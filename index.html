@@ -203,7 +203,7 @@
 	          <div class="container">
 			<div class="tab-content" id="re">
 		          <h2>Reportes RE</h2>
-		          <form id="reForm">
+		          <form id="reForm" enctype="multipart/form-data">
 		              <label>Fecha: <input type="date" name="fecha" required></label>
 		              <label>Equipo:
 		                <select name="equipo" required>
@@ -270,8 +270,8 @@
 				<label>Imagen:
 	  				<input type="file" name="imagen" accept="image/*" required capture="environment">
 				</label>
-	
-		
+
+
 		            <button type="submit">Enviar</button>
 		          </form>
 		          </div>
