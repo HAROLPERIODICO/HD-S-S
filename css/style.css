@@ -360,7 +360,7 @@ h2 {
 }
 
 /* Formulario */
-form {
+reForm {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 15px;
@@ -398,7 +398,7 @@ form button:hover {
 }
 
 /* Tabla */
-table {
+reTable {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
