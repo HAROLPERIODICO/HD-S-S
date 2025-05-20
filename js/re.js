@@ -2,7 +2,7 @@
 // Description: JavaScript code to handle the backlog form submission and data display
 const reForm = document.getElementById('reForm');
 const reTableBody = document.querySelector('#reTable tbody');
-const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbxZvIrWFXRoKkjmRvo6B1NWmyidLpJzK9M7SeiDfuzLUxrqdjogahI1vtAIPf1b5YnL/exec'; // actualiza con la tuya
+const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbwoSivSYQq1QUB5xJssLq9kCoBfCq7g4q_iAHKUjUymIG2v9FlvwHIhWMQHhpFQDO8d/exec'; // actualiza con la tuya
 
 function agregarFilaRE(data) {
   const row = document.createElement('tr');
