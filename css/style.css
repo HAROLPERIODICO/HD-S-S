@@ -303,7 +303,7 @@
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
-  color: #fb0505;
+  color: #f1c0785;
 }
 
 
@@ -318,7 +318,7 @@
 }
 
 .indicadores-menu li {
-  background-color: #fb0505;
+  background-color: #7b64ed;
   color: white;
   padding: 10px 16px;
   border-radius: 20px;
@@ -327,7 +327,7 @@
 }
 
 .indicadores-menu li:hover {
-  background-color: #c20404;
+  background-color: #7b64ed;
 }
 
 .indicador-contenido {
