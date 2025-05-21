@@ -2,8 +2,9 @@
 // Description: JavaScript code to handle the backlog form submission and data display
 const reForm = document.getElementById('reForm');
 const reTableBody = document.querySelector('#reTable tbody');
-const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbx0BPW6Z5Q33_dNEPTdQmfsMtPpBJQ07s3l_Cm_-l1TVdEsG2-henNnxdEekyWRAcdG/exec'; // tu URL de Apps Script
-const fila = document.createElement('tr');
+const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbyAQiWkTmf8FJtt8_Yzg2Et5Yu2VoUjUul_Y_dAhO-bkKhap9YHT7AVpcDY4S-xm6dM/exec'; // <- Reemplaza con tu URL real
+const imagenInput = document.getElementById('imagenInput');
+
 async function cargarDatosRE() {
   try {
     const res = await fetch(reWebhookUrl);
@@ -15,17 +16,54 @@ async function cargarDatosRE() {
   }
 }
 
+function agregarFilaRE(item) {
+  const fila = document.createElement('tr');
+  fila.innerHTML = `
+    <td>${item.fecha}</td>
+    <td>${item.equipo}</td>
+    <td>${item.descripcion}</td>
+    <td>${item.parte}</td>
+    <td>${item.prioridad}</td>
+    <td>${item.responsable}</td>
+    <td>${item.turno}</td>
+    <td>${item.grupo}</td>
+    <td>${item.accion}</td>
+    <td>${item.imagenUrl ? `<a href="${item.imagenUrl}" target="_blank">Ver imagen</a>` : 'Sin imagen'}</td>
+  `;
+  reTableBody.appendChild(fila);
+}
+
 reForm.addEventListener('submit', async function (e) {
   e.preventDefault();
   const formData = new FormData(reForm);
+  const file = imagenInput.files[0];
+
+  let imagenBase64 = '';
+  if (file) {
+    imagenBase64 = await convertirArchivoABase64(file);
+  }
+
+  const datos = {
+    fecha: formData.get('fecha'),
+    equipo: formData.get('equipo'),
+    descripcion: formData.get('descripcion'),
+    parte: formData.get('parte'),
+    prioridad: formData.get('prioridad'),
+    responsable: formData.get('responsable'),
+    turno: formData.get('turno'),
+    grupo: formData.get('grupo'),
+    accion: formData.get('accion'),
+    imagen: imagenBase64
+  };
 
   try {
     const res = await fetch(reWebhookUrl, {
       method: 'POST',
-      body: formData
+      body: JSON.stringify(datos),
+      headers: { 'Content-Type': 'application/json' }
     });
 
-    const responseData = await res.json(); // ya funcionará con el JSON que retorna ahora Apps Script
+    const responseData = await res.json();
     agregarFilaRE(responseData);
     reForm.reset();
   } catch (err) {
@@ -33,27 +71,27 @@ reForm.addEventListener('submit', async function (e) {
   }
 });
 
+function convertirArchivoABase64(file) {
+  return new Promise((resolve, reject) => {
+    const lector = new FileReader();
+    lector.onload = () => resolve(lector.result.split(',')[1]);
+    lector.onerror = reject;
+    lector.readAsDataURL(file);
+  });
+}
 
 document.addEventListener('DOMContentLoaded', cargarDatosRE);
 
-function agregarFilaRE(dato) {
-  const fila = document.createElement('tr');
-  fila.innerHTML = `
-    <td>${dato.fecha || ''}</td>
-    <td>${dato.equipo || ''}</td>
-    <td>${dato.descripcion || ''}</td>
-    <td>${dato.parte || ''}</td>
-    <td>${dato.prioridad || ''}</td>
-    <td>${dato.responsable || ''}</td>
-    <td>${dato.turno || ''}</td>
-    <td>${dato.grupo || ''}</td>
-    <td>${dato.accion || ''}</td>
-    <td>
-      ${dato.imagenUrl ? `<a href="${dato.imagenUrl}" target="_blank">Ver imagen</a>` : 'Sin imagen'}
-    </td>
-  `;
-  reTableBody.appendChild(fila);
-}
+document.getElementById('mostrarTablaRE').addEventListener('click', function () {
+  const tabla = document.getElementById('contenedorTablaRE');
+  if (tabla.style.display === 'none') {
+    tabla.style.display = 'block';
+    this.textContent = 'Ocultar tabla RE';
+  } else {
+    tabla.style.display = 'none';
+    this.textContent = 'Mostrar tabla RE';
+  }
+});
 
 
 
