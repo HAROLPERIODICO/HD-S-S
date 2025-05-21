@@ -836,7 +836,7 @@ tbody tr:nth-child(even) {
         width: 100%;
         display: none;
         flex-direction: column;
-        background-color: #fb4f05fa;
+        background-color: #7b64ed;
         position: absolute;
         top: 100%;
         left: 0;
