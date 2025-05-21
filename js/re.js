@@ -1,26 +1,6 @@
 // File: js/re.js
 // Description: JavaScript code to handle the backlog form submission and data display
-const reForm = document.getElementById('reForm');
-const reTableBody = document.querySelector('#reTable tbody');
-const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbw76zeeom5oeZmBU5PyP4WtfUg3QzlPuBA725dNT8mmW9cFLuvJ2G8ZunU-QG_1kawN/exec'; // actualiza con la tuya
-
-function agregarFilaRE(data) {
-  const row = document.createElement('tr');
-  ['fecha', 'equipo', 'descripcion', 'parte', 'prioridad', 'responsable', 'turno', 'grupo', 'accion', 'imagenUrl'].forEach(key => {
-    const td = document.createElement('td');
-    if (key === 'imagenUrl') {
-      const link = document.createElement('a');
-      link.href = data[key];
-      link.textContent = 'Ver imagen';
-      link.target = '_blank';
-      td.appendChild(link);
-    } else {
-      td.textContent = data[key] || '';
-    }
-    row.appendChild(td);
-  });
-  reTableBody.appendChild(row);
-}
+const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbwpD3wkHc6q-vhV5XRtQ0Sy7l6EtOVpJVk7-X99Gm4_y2ncQJVuI_ADVOA9jl1hsJdI/exec'; // tu URL de Apps Script
 
 async function cargarDatosRE() {
   try {
@@ -43,13 +23,14 @@ reForm.addEventListener('submit', async function (e) {
       body: formData
     });
 
-    const responseData = await res.json(); // solo si App Script devuelve JSON válido
+    const responseData = await res.json(); // ya funcionará con el JSON que retorna ahora Apps Script
     agregarFilaRE(responseData);
     reForm.reset();
   } catch (err) {
     console.error('Error al enviar datos RE:', err);
   }
 });
+
 
 document.addEventListener('DOMContentLoaded', cargarDatosRE);
 
