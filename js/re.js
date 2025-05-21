@@ -36,6 +36,28 @@ reForm.addEventListener('submit', async function (e) {
 
 document.addEventListener('DOMContentLoaded', cargarDatosRE);
 
+function agregarFilaRE(dato) {
+  const fila = document.createElement('tr');
+  fila.innerHTML = `
+    <td>${dato.fecha || ''}</td>
+    <td>${dato.equipo || ''}</td>
+    <td>${dato.descripcion || ''}</td>
+    <td>${dato.parte || ''}</td>
+    <td>${dato.prioridad || ''}</td>
+    <td>${dato.responsable || ''}</td>
+    <td>${dato.turno || ''}</td>
+    <td>${dato.grupo || ''}</td>
+    <td>${dato.accion || ''}</td>
+    <td>
+      ${dato.imagenUrl ? `<a href="${dato.imagenUrl}" target="_blank">Ver imagen</a>` : 'Sin imagen'}
+    </td>
+  `;
+  reTableBody.appendChild(fila);
+}
+
+
+
+
 function aplicarFiltrosRE() {
   const equipo = document.getElementById('filtroEquipo').value.toLowerCase();
   const grupo = document.getElementById('filtroGrupo').value.toLowerCase();
