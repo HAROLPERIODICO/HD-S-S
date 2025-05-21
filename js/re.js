@@ -3,7 +3,7 @@
 const reForm = document.getElementById('reForm');
 const reTableBody = document.querySelector('#reTable tbody');
 const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbwpD3wkHc6q-vhV5XRtQ0Sy7l6EtOVpJVk7-X99Gm4_y2ncQJVuI_ADVOA9jl1hsJdI/exec'; // tu URL de Apps Script
-
+const fila = document.createElement('tr');
 async function cargarDatosRE() {
   try {
     const res = await fetch(reWebhookUrl);
