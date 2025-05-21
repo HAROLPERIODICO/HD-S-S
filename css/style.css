@@ -106,10 +106,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  .header.scrolled {
-    background-color: #ffe2e2;
-  }
-  
+ 
   /* CONTENEDOR GENERAL */
   .container {
     max-width: 1200px;
@@ -198,7 +195,7 @@
 
   /* BOTÓN CTA */
     .cta .btn {
-    background-color: #9691b8;
+    background-color: 122D70;
     color: #fff;
     padding: 10px 20px;
     border-radius: 25px;
@@ -207,7 +204,7 @@
   }
   
   .cta .btn:hover {
-    background-color: #ffae00;
+    background-color: #7b64ed;
   }
 
 
@@ -231,9 +228,9 @@
   min-width: 280px;
 }
 
-.nosotros-texto h2 {
+. h2 {
   font-size: 2rem;
-  color: #fb0505;
+  color: #122D70;
   margin-bottom: 1rem;
 }
 
@@ -299,12 +296,12 @@
   background-color: #fffaf5;
 }
 
-.indicadores h2 {
+/*.indicadores h2 {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
   color: #f1c0785;
-}
+}*/
 
 
 .indicadores-menu {
@@ -318,7 +315,7 @@
 }
 
 .indicadores-menu li {
-  background-color: #7b64ed;
+  background-color: #122D70;
   color: white;
   padding: 10px 16px;
   border-radius: 20px;
@@ -330,10 +327,7 @@
   background-color: #7b64ed;
 }
 
-.indicador-contenido {
-  display: none;
-  text-align: center;
-}
+
 
 .indicador-contenido img {
   max-width: 100%;
@@ -810,10 +804,10 @@ tbody tr:nth-child(even) {
   .footer-info p {
     font-size: 13px;
   }
-.header {
-    background-color:  #fb4f09fa;
+/*.header {
+    background-color:  #122D70;
     color: white;
-}
+}*/
 
   }
 
@@ -850,6 +844,7 @@ tbody tr:nth-child(even) {
         margin-top: 10px;
         width: 100%;
         text-align: center;
+          grid-template-columns: 1fr;
       }
    
     }
