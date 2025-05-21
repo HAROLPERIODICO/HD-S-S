@@ -1,8 +1,8 @@
 
 // Description: JavaScript code to handle the backlog form submission and data display
-const reForm = document.getElementById('backlogForm');
-const reTableBody = document.querySelector('#backlogTable tbody');
-const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbx44xvGbXidO0m6THUDFsZcsav1C86sKDMsvZ3yH3KuyiAPf6LnLna2qUbDbBcHvAQ/exec'; // actualiza con la tuya
+const backlogForm = document.getElementById('backlogForm');
+const backlogTableBody = document.querySelector('#backlogTable tbody');
+const backlogWebhookUrl = 'https://script.google.com/macros/s/AKfycbx44xvGbXidO0m6THUDFsZcsav1C86sKDMsvZ3yH3KuyiAPf6LnLna2qUbDbBcHvAQ/exec'; // actualiza con la tuya
 
 function agregarFilaBACKLOG(data) {
   const row = document.createElement('tr');
