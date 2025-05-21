@@ -76,7 +76,7 @@ function aplicarFiltrosBACKLOG() {
   });
 }
 
-document.getElementById('mostrarTablaRE').addEventListener('click', function () {
+document.getElementById('mostrarTablaBACKLOG').addEventListener('click', function () {
   const tabla = document.getElementById('contenedorTablaBACKLOG');
   if (tabla.style.display === 'none') {
     tabla.style.display = 'block';
