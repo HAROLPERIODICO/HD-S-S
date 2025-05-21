@@ -31,7 +31,7 @@
 }
 .bandera-chm {
   position: fixed;
-  top: 80px;
+  top: 90px;
   right: 20px;
   z-index: 1000;
 }
@@ -374,7 +374,7 @@
 h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #fb4f05fa;
+  color: #122D70;
 }
 
 /* Formulario */
@@ -404,7 +404,7 @@ form textarea {
 form button {
   grid-column: span 2;
   padding: 10px;
-  background: #1e88e5;
+  background: #122D70;
   color: white;
   border: none;
   border-radius: 5px;
@@ -413,7 +413,7 @@ form button {
 }
 
 form button:hover {
-  background: #1565c0;
+  background: #7b64ed;
 }
 
 /* Tabla */
@@ -439,7 +439,7 @@ tbody tr:nth-child(even) {
 }
 
 #mostrarTablaRE {
-  background-color: #3498db;
+  background-color: #122D70;
   color: white;
   padding: 10px 18px;
   border: none;
@@ -451,7 +451,7 @@ tbody tr:nth-child(even) {
 }
 
 #mostrarTablaRE:hover {
-  background-color: #2980b9;
+  background-color: #122D70;
 }
 
 #contenedorTablaRE {
