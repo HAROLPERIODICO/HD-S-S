@@ -8,7 +8,7 @@
   body {
     font-family: 'Roboto', sans-serif;
     color: #484645;
-    background-color: #fcfaf9;
+    background-color: #d8e1ed;
     padding-top: 40px; /* Espacio para el header fijo */
     font-size: 13px;
   }
@@ -96,7 +96,7 @@
       HEADER
   ============================ */
     .header {
-    background-color: #110063;
+    background-color: #1c0785;
     color: #fff;
     padding: 1rem 0;
     position: fixed;
