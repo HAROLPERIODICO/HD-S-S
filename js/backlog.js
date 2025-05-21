@@ -1,14 +1,22 @@
 // File: js/backlog.js
 // Description: JavaScript code to handle the backlog form submission and data display
-const backlogForm = document.getElementById('backlogForm');
-const backlogTableBody = document.querySelector('#backlogTable tbody');
-const backlogWebhookUrl = 'https://script.google.com/macros/s/AKfycbxZvIrWFXRoKkjmRvo6B1NWmyidLpJzK9M7SeiDfuzLUxrqdjogahI1vtAIPf1b5YnL/exec'; // ← Reemplaza con tu URL de implementación
+const reForm = document.getElementById('backlogForm');
+const reTableBody = document.querySelector('#backlogTable tbody');
+const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbx44xvGbXidO0m6THUDFsZcsav1C86sKDMsvZ3yH3KuyiAPf6LnLna2qUbDbBcHvAQ/exec'; // actualiza con la tuya
 
 function agregarFilaBACKLOG(data) {
   const row = document.createElement('tr');
-  ['fecha', 'equipo', 'descripcion', 'parte', 'prioridad', 'responsable', 'turno', 'grupo', 'accion'].forEach(key => {
+  ['fecha', 'equipo', 'descripcion', 'parte', 'prioridad', 'responsable', 'turno', 'grupo', 'accion', 'imagenUrl'].forEach(key => {
     const td = document.createElement('td');
-    td.textContent = data[key] || '';
+    if (key === 'imagenUrl') {
+      const link = document.createElement('a');
+      link.href = data[key];
+      link.textContent = 'Ver imagen';
+      link.target = '_blank';
+      td.appendChild(link);
+    } else {
+      td.textContent = data[key] || '';
+    }
     row.appendChild(td);
   });
   backlogTableBody.appendChild(row);
@@ -16,40 +24,36 @@ function agregarFilaBACKLOG(data) {
 
 async function cargarDatosBACKLOG() {
   try {
-    const response = await fetch(reWebhookUrl);
-    const registros = await response.json();
-    backlogTableBody.innerHTML = ''; // Limpiar tabla
-    registros.forEach(agregarFilaBACKLOG);
-  } catch (error) {
-    console.error('Error al cargar registros BACKLOG:', error);
+    const res = await fetch(reWebhookUrl);
+    const data = await res.json();
+    backlogTableBody.innerHTML = '';
+    data.forEach(agregarFilaBACKLOG);
+  } catch (err) {
+    console.error('Error al cargar datos:', err);
   }
 }
 
-backlogForm.addEventListener('submit', async function (e) {
+reForm.addEventListener('submit', async function (e) {
   e.preventDefault();
   const formData = new FormData(backlogForm);
-  const data = Object.fromEntries(formData.entries());
 
   try {
-    await fetch(backlogWebhookUrl, {
+    const res = await fetch(reWebhookUrl, {
       method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: formData
     });
 
-    agregarFilaBACKLOG(data);
-    backlogForm.reset();
-  } catch (error) {
-    console.error('Error al enviar datos BACKLOG:', error);
+    const responseData = await res.json(); // solo si App Script devuelve JSON válido
+    agregarFilaRE(responseData);
+    reForm.reset();
+  } catch (err) {
+    console.error('Error al enviar datos BACKLOG:', err);
   }
 });
 
 document.addEventListener('DOMContentLoaded', cargarDatosBACKLOG);
 
-
-
-function aplicarFiltrosRE() {
+function aplicarFiltrosBACKLOG() {
   const equipo = document.getElementById('filtroEquipo').value.toLowerCase();
   const grupo = document.getElementById('filtroGrupo').value.toLowerCase();
   const prioridad = document.getElementById('filtroPrioridad').value.toLowerCase();
@@ -57,7 +61,7 @@ function aplicarFiltrosRE() {
   const accion = document.getElementById('filtroAccion').value.toLowerCase();
   const fecha = document.getElementById('filtroFecha').value;
 
-  document.querySelectorAll('#reTable tbody tr').forEach(row => {
+  document.querySelectorAll('#backlogTable tbody tr').forEach(row => {
     const celdas = row.querySelectorAll('td');
     const match = 
       (equipo === '' || celdas[1].textContent.toLowerCase() === equipo) &&
@@ -65,8 +69,42 @@ function aplicarFiltrosRE() {
       (grupo === '' || celdas[7].textContent.toLowerCase() === grupo) &&
       (turno === '' || celdas[6].textContent.toLowerCase() === turno) &&
       (accion === '' || celdas[8].textContent.toLowerCase() === accion) &&
-      (fecha === '' || celdas[0].textContent === fecha);
+    (fecha === '' || celdas[0].textContent === fecha);
+     
 
     row.style.display = match ? '' : 'none';
   });
 }
+
+document.getElementById('mostrarTablaRE').addEventListener('click', function () {
+  const tabla = document.getElementById('contenedorTablaBACKLOG');
+  if (tabla.style.display === 'none') {
+    tabla.style.display = 'block';
+    this.textContent = 'Ocultar tabla BACKLOG';
+  } else {
+    tabla.style.display = 'none';
+    this.textContent = 'Mostrar tabla BACKLOG';
+  }
+});
+
+
+const btnMostrar = document.getElementById('mostrarTablaBACKLOG');
+const contenedorTabla = document.getElementById('contenedorTablaBACKLOG');
+
+btnMostrar.addEventListener('click', function () {
+  if (contenedorTabla.classList.contains('mostrar')) {
+    contenedorTabla.classList.remove('mostrar');
+    // Esperar la transición antes de ocultar completamente
+    setTimeout(() => {
+      contenedorTabla.style.display = 'none';
+    }, 300);
+    this.textContent = 'Mostrar tabla BACKLOG';
+  } else {
+    contenedorTabla.style.display = 'block';
+    setTimeout(() => {
+      contenedorTabla.classList.add('mostrar');
+    }, 10);
+    this.textContent = 'Ocultar tabla BACKLOG';
+  }
+});
+
