@@ -828,6 +828,12 @@ tbody tr:nth-child(even) {
     
     
     @media (max-width: 768px) {
+
+.header {
+  position: fixed;
+  z-index: 1000;
+}
+        
       .menu-toggle {
         display: block;
       }
