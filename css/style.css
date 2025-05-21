@@ -6,7 +6,7 @@
   }
   
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Atlassian', sans-serif;
     color: #484645;
     background-color: #d8e1ed;
     padding-top: 40px; /* Espacio para el header fijo */
@@ -96,7 +96,7 @@
       HEADER
   ============================ */
     .header {
-    background-color: #1c0785;
+    background-color: #122D70;
     color: #fff;
     padding: 1rem 0;
     position: fixed;
