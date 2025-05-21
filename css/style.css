@@ -18,6 +18,19 @@
     color: inherit;
   }
 
+.bandera-chm {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.bandera-chm img {
+  width: 80px;
+  height: 75px;
+}
+
+
  .whatsapp-flotante {
   position: fixed;
   bottom: 20px;
