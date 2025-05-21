@@ -853,11 +853,33 @@ tbody tr:nth-child(even) {
         display: flex;
       }
     
-      .cta {
+      /*.cta {
         margin-top: 10px;
         width: 100%;
         text-align: center;
           grid-template-columns: 1fr;
-      }
-   
+      }*/
+
+.logo-chm {
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.logo-chm img {
+  width: 80px;
+  height: 75px;
+}
+.bandera-chm {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.bandera-chm img {
+  width: 80px;
+  height: 75px;
+}
     }
