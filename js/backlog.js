@@ -1,4 +1,4 @@
-// File: js/backlog.js
+
 // Description: JavaScript code to handle the backlog form submission and data display
 const reForm = document.getElementById('backlogForm');
 const reTableBody = document.querySelector('#backlogTable tbody');
