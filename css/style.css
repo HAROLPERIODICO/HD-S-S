@@ -869,10 +869,10 @@ inspecciones {
   .footer-info p {
     font-size: 13px;
   }
-/*.header {
+.header {
     background-color:  #122D70;
     color: white;
-}*/
+}
 
   }
   
@@ -880,7 +880,7 @@ inspecciones {
 
 .header {
   position: fixed;
- /* z-index: 1000;*/
+  z-index: 1000;
 }
         
       .menu-toggle {
