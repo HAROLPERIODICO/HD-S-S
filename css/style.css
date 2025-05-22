@@ -538,7 +538,7 @@ tbody tr:nth-child(even) {
 
 /* Botón de envío */
 #form-backlog button[type="submit"] {
-  background-color: #fb0505;
+  background-color: #122D70;
   color: #fff;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
@@ -550,7 +550,7 @@ tbody tr:nth-child(even) {
 }
 
 #form-backlog button[type="submit"]:hover {
-  background-color: #c90404;
+  background-color: #7b64ed;
 }
 
 /* Mensaje de éxito */
@@ -829,9 +829,9 @@ tbody tr:nth-child(even) {
     
     @media (max-width: 768px) {
 
-.header {
+/*.header {
   position: fixed;
-  z-index: 1000;
+  z-index: 1000;*/
 }
         
       .menu-toggle {
@@ -868,7 +868,7 @@ tbody tr:nth-child(even) {
 
 .logo-chm {
   position: fixed;
-  top: 120px;
+  top: 150px;
   left: 20px;
   z-index: 1000;
 }
@@ -879,7 +879,7 @@ tbody tr:nth-child(even) {
 }
 .bandera-chm {
   position: fixed;
-  top: 120px;
+  top: 150px;
   right: 20px;
   z-index: 1000;
 }
