@@ -823,15 +823,12 @@ tbody tr:nth-child(even) {
 }*/
 
   }
-
- 
-    
-    
+  
     @media (max-width: 768px) {
 
-/*.header {
+.header {
   position: fixed;
-  z-index: 1000;*/
+ /* z-index: 1000;*/
 }
         
       .menu-toggle {
