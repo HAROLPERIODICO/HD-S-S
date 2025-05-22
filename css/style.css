@@ -221,6 +221,18 @@
   }
 
 
+.cta .btn-bac {
+    background-color: #122d70;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta .btn-bac:hover {
+    background-color: #3d1ba8;
+  }
   /* ============================
       SECCIÓN NOSOTROS
   ============================ */
@@ -293,7 +305,7 @@
 
 .swiper-slide p {
   font-size: 1rem;
-  color: #fb0505;
+  color: #122D70;
   
 }
 
@@ -305,7 +317,7 @@
   ============================ */
 
 .indicadores {
-  padding: 8rem 1rem;
+  padding: 4rem 1rem;
   background-color: #fffaf5;
 }
 
