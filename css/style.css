@@ -233,6 +233,7 @@
   .cta .btn-bac:hover {
     background-color: #3d1ba8;
   }
+
 .cta .btn-ins {
     background-color: #122d70;
     color: #fff;
@@ -256,12 +257,6 @@
   top: 100px;
 }
 
-/*.indicadores h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #f1c0785;
-}*/
 .indicadores .container {
   display: flex;
   flex-wrap: wrap;
@@ -312,7 +307,7 @@
   }
 }
 
-/*.indicador-contenido {
+.indicador-contenido {
   display: none;
   text-align: center;
   animation: fadeIn 0.5s ease forwards;
@@ -411,7 +406,12 @@ status {
   margin: auto;
 }
 
-
+.status .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
 
   /* ============================
      RE 
