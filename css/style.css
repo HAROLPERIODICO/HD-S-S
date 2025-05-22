@@ -9,7 +9,7 @@
     font-family: 'Atlassian', sans-serif;
     color: #484645;
     background-color: #d8e1ed;
-    padding-top: 40px; /* Espacio para el header fijo */
+    padding-top: 100px; /* Espacio para el header fijo */
     font-size: 13px;
   }
   
@@ -130,6 +130,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
+
   
   /* LOGO */
   .logo a {
@@ -252,9 +254,9 @@
   ============================ */
 
 .indicadores {
-  padding: 1rem 1rem;
+  padding: 120px 0;
   background-color: #fffaf5;
-  top: 100px;
+  
 }
 
 .indicadores-menu {
