@@ -20,7 +20,7 @@
 
 .logo-chm {
   position: fixed;
-  top: 80px;
+  top: 100px;
   left: 20px;
   z-index: 1000;
 }
@@ -31,7 +31,7 @@
 }
 .bandera-chm {
   position: fixed;
-  top: 80px;
+  top: 100px;
   right: 20px;
   z-index: 1000;
 }
@@ -217,7 +217,7 @@
   }
   
   .cta .btn:hover {
-    background-color: #7b64ed;
+    background-color: #3d1ba8;
   }
 
 
@@ -337,7 +337,7 @@
 }
 
 .indicadores-menu li:hover {
-  background-color: #7b64ed;
+  background-color: #3d1ba8;
 }
 
 
@@ -842,7 +842,7 @@ tbody tr:nth-child(even) {
         width: 100%;
         display: none;
         flex-direction: column;
-        background-color: #7b64ed;
+        background-color: #29146b;
         position: absolute;
         top: 100%;
         left: 0;
