@@ -251,8 +251,8 @@
       INDICADORES
   ============================ */
 
-indicadores {
-  padding: 8rem 1rem;
+.indicadores {
+  padding: 1rem 1rem;
   background-color: #fffaf5;
   top: 100px;
 }
