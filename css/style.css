@@ -233,6 +233,82 @@
   .cta .btn-bac:hover {
     background-color: #3d1ba8;
   }
+
+
+  /* ============================
+      INDICADORES
+  ============================ */
+
+.indicadores {
+  padding: 4rem 1rem;
+  background-color: #fffaf5;
+  top: 100px;
+}
+
+/*.indicadores h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #f1c0785;
+}*/
+.indicadores .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+.indicadores-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.indicadores-menu li {
+  background-color: #122D70;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicadores-menu li:hover {
+  background-color: #3d1ba8;
+}
+
+
+
+.indicador-contenido img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*.indicador-contenido {
+  display: none;
+  text-align: center;
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0; /* Oculto inicialmente para animación */
+}
+
+
   /* ============================
       SECCIÓN NOSOTROS
   ============================ */
@@ -312,78 +388,19 @@
 
 
 
-  /* ============================
-      INDICADORES
-  ============================ */
 
-.indicadores {
+  /* ============================
+     ESTATUS
+  ============================ */
+status {
   padding: 4rem 1rem;
   background-color: #fffaf5;
-  top: 100px;
-}
-
-/*.indicadores h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #f1c0785;
-}*/
-.indicadores .container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
+  color: #333;
+  max-width: 800px;
+  margin: auto;
 }
 
 
-.indicadores-menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin-bottom: 2rem;
-}
-
-.indicadores-menu li {
-  background-color: #122D70;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.indicadores-menu li:hover {
-  background-color: #3d1ba8;
-}
-
-
-
-.indicador-contenido img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.indicador-contenido {
-  display: none;
-  text-align: center;
-  animation: fadeIn 0.5s ease forwards;
-  opacity: 0; /* Oculto inicialmente para animación */
-}
 
   /* ============================
      RE 
@@ -713,6 +730,17 @@ tbody tr:nth-child(even) {
   text-align: center;
   grid-template-columns: 1fr;
 }
+}
+
+  /* ============================
+     INSPECCIONES
+  ============================ */
+inspecciones {
+  padding: 4rem 1rem;
+  background-color: #fffaf5;
+  color: #333;
+  max-width: 800px;
+  margin: auto;
 }
 
 
