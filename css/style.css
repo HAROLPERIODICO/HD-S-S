@@ -233,7 +233,18 @@
   .cta .btn-bac:hover {
     background-color: #3d1ba8;
   }
-
+.cta .btn-ins {
+    background-color: #122d70;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta .btn-ins:hover {
+    background-color: #3d1ba8;
+  }
 
   /* ============================
       INDICADORES
@@ -392,7 +403,7 @@
   /* ============================
      ESTATUS
   ============================ */
-status {
+.status {
   padding: 4rem 1rem;
   background-color: #fffaf5;
   color: #333;
@@ -414,22 +425,22 @@ h2 {
 }
 
 /* Formulario */
-reForm {
+.reForm {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   left: 20px;
 }
 
-form label {
+.form label {
   display: flex;
   flex-direction: column;
   font-weight: 600;
 }
 
-form input,
-form select,
-form textarea {
+.form input,
+.form select,
+.form textarea {
   margin-top: 5px;
   padding: 8px;
   border: 1px solid #ccc;
@@ -437,7 +448,7 @@ form textarea {
   font-size: 14px;
 }
 
-form button {
+.form button {
   grid-column: span 2;
   padding: 10px;
   background: #122D70;
@@ -448,18 +459,18 @@ form button {
   cursor: pointer;
 }
 
-form button:hover {
+.form button:hover {
   background: #7b64ed;
 }
 
 /* Tabla */
-reTable {
+.reTable {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
 }
 
-thead {
+.thead {
   background: #fb4f05fa;
   color: white;
 }
