@@ -255,7 +255,7 @@
 
 .indicadores {
   padding: 120px 0;
-  background-color: #fffaf5;
+  background-color: #d5e1f0; 
   
 }
 
@@ -314,7 +314,7 @@
   ============================ */
 nosotros {
   padding: 4rem 1rem;
-  background-color: #fffaf5;
+  background-color: #bbd1ed;
 }
 
 .nosotros .container {
@@ -394,7 +394,7 @@ nosotros {
   ============================ */
 status {
   padding: 4rem 1rem;
-  background-color: #fffaf5;
+  background-color: #d5e1f0;
   color: #333;
   max-width: 800px;
   margin: auto;
@@ -417,7 +417,13 @@ h2 {
   margin-bottom: 20px;
   color: #122D70;
 }
-
+re {
+  padding: 4rem 1rem;
+  background-color: #bbd1ed;
+  color: #333;
+  max-width: 800px;
+  margin: auto;
+}
 /* Formulario */
 reForm {
   display: grid;
@@ -533,7 +539,7 @@ tbody tr:nth-child(even) {
   ============================ */
 .seccion-backlog {
   padding: 4rem 1rem;
-  background-color: #fffaf5;
+  background-color: #bbd1ed;
   color: #333;
   max-width: 800px;
   margin: auto;
@@ -742,7 +748,7 @@ tbody tr:nth-child(even) {
   ============================ */
 inspecciones {
   padding: 4rem 1rem;
-  background-color: #fffaf5;
+  background-color: #d5e1f0;
   color: #333;
   max-width: 800px;
   margin: auto;
