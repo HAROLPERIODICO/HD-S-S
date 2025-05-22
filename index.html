@@ -651,60 +651,89 @@
       seleccionado.style.opacity = 1;
     });
   });
+</script>
+<script>	
+const reForm = document.getElementById('reForm');
+const reTableBody = document.querySelector('#reTable tbody');
+const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbxvotCLbAx_nM5P2vTxLhqQsHCrNkWZn82PjudpOOQmJHS2MTGgRfSPHhcvWZd37zxo/exec';
+const imagenInput = document.getElementById('imagenInput');
 
-	
-<script>
-    const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbxCY1gi9hnjnzdP0e38VSwBwY3F4_S5fqrgl8CtPl4gttuhEVAJlmGyFMk1PLYeHxzO/exec';
+async function cargarDatosRE() {
+  try {
+    const res = await fetch(reWebhookUrl);
+    const data = await res.json();
+    reTableBody.innerHTML = '';
+    data.forEach(agregarFilaRE);
+  } catch (err) {
+    console.error('Error al cargar datos:', err);
+  }
+}
 
-    const reForm = document.getElementById('reForm');
-    const imagenInput = document.getElementById('imagenInput');
+function agregarFilaRE(item) {
+  const fila = document.createElement('tr');
+  fila.innerHTML = `
+    <td>${item.fecha}</td>
+    <td>${item.equipo}</td>
+    <td>${item.descripcion}</td>
+    <td>${item.parte}</td>
+    <td>${item.prioridad}</td>
+    <td>${item.responsable}</td>
+    <td>${item.turno}</td>
+    <td>${item.grupo}</td>
+    <td>${item.accion}</td>
+    <td>${item.imagenUrl ? `<a href="${item.imagenUrl}" target="_blank">Ver imagen</a>` : 'Sin imagen'}</td>
+  `;
+  reTableBody.appendChild(fila);
+}
 
-    reForm.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const formData = new FormData(reForm);
-      const file = imagenInput.files[0];
+reForm.addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const formData = new FormData(reForm);
+  const file = imagenInput.files[0];
 
-      let imagenBase64 = '';
-      if (file) {
-        imagenBase64 = await convertirArchivoABase64(file);
-      }
+  let imagenBase64 = '';
+  if (file) {
+    imagenBase64 = await convertirArchivoABase64(file);
+  }
 
-      const datos = {
-        fecha: formData.get('fecha'),
-        equipo: formData.get('equipo'),
-        descripcion: formData.get('descripcion'),
-        parte: formData.get('parte'),
-        prioridad: formData.get('prioridad'),
-        responsable: formData.get('responsable'),
-        turno: formData.get('turno'),
-        grupo: formData.get('grupo'),
-        accion: formData.get('accion'),
-        imagen: imagenBase64
-      };
+  const datos = {
+    fecha: formData.get('fecha'),
+    equipo: formData.get('equipo'),
+    descripcion: formData.get('descripcion'),
+    parte: formData.get('parte'),
+    prioridad: formData.get('prioridad'),
+    responsable: formData.get('responsable'),
+    turno: formData.get('turno'),
+    grupo: formData.get('grupo'),
+    accion: formData.get('accion'),
+    imagen: imagenBase64
+  };
 
-      try {
-        const res = await fetch(reWebhookUrl, {
-          method: 'POST',
-          body: JSON.stringify(datos),
-          headers: { 'Content-Type': 'application/json' }
-        });
-        const result = await res.json();
-        alert("Reporte enviado correctamente");
-        console.log(result);
-      } catch (error) {
-        alert("Error al enviar");
-        console.error(error);
-      }
+  try {
+    const res = await fetch(reWebhookUrl, {
+      method: 'POST',
+      body: JSON.stringify(datos),
+      headers: { 'Content-Type': 'application/json' }
     });
 
-    function convertirArchivoABase64(file) {
-      return new Promise((resolve, reject) => {
-        const lector = new FileReader();
-        lector.onload = () => resolve(lector.result.split(',')[1]);
-        lector.onerror = reject;
-        lector.readAsDataURL(file);
-      });
-    }
+    const responseData = await res.json();
+    agregarFilaRE(responseData);
+    reForm.reset();
+  } catch (err) {
+    console.error('Error al enviar datos RE:', err);
+  }
+});
+
+function convertirArchivoABase64(file) {
+  return new Promise((resolve, reject) => {
+    const lector = new FileReader();
+    lector.onload = () => resolve(lector.result.split(',')[1]);
+    lector.onerror = reject;
+    lector.readAsDataURL(file);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', cargarDatosRE);
 </script>
 	
 </body>
