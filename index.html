@@ -622,8 +622,8 @@
 <script src="js/aplicarFiltrosBACKLOG.js"></script>
 <script src="js/mostrarTablaBACKLOG.js"></script>
 <script src="js/menu.js"></script>
-<script src="js/re.js"></script>
-<script src="js/backlog.js"></script>
+
+
 
 <script>
   const botones = document.querySelectorAll(".indicadores-menu li");
@@ -651,7 +651,61 @@
       seleccionado.style.opacity = 1;
     });
   });
-</script>
 
+	
+<script>
+    const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbxCY1gi9hnjnzdP0e38VSwBwY3F4_S5fqrgl8CtPl4gttuhEVAJlmGyFMk1PLYeHxzO/exec';
+
+    const reForm = document.getElementById('reForm');
+    const imagenInput = document.getElementById('imagenInput');
+
+    reForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(reForm);
+      const file = imagenInput.files[0];
+
+      let imagenBase64 = '';
+      if (file) {
+        imagenBase64 = await convertirArchivoABase64(file);
+      }
+
+      const datos = {
+        fecha: formData.get('fecha'),
+        equipo: formData.get('equipo'),
+        descripcion: formData.get('descripcion'),
+        parte: formData.get('parte'),
+        prioridad: formData.get('prioridad'),
+        responsable: formData.get('responsable'),
+        turno: formData.get('turno'),
+        grupo: formData.get('grupo'),
+        accion: formData.get('accion'),
+        imagen: imagenBase64
+      };
+
+      try {
+        const res = await fetch(reWebhookUrl, {
+          method: 'POST',
+          body: JSON.stringify(datos),
+          headers: { 'Content-Type': 'application/json' }
+        });
+        const result = await res.json();
+        alert("Reporte enviado correctamente");
+        console.log(result);
+      } catch (error) {
+        alert("Error al enviar");
+        console.error(error);
+      }
+    });
+
+    function convertirArchivoABase64(file) {
+      return new Promise((resolve, reject) => {
+        const lector = new FileReader();
+        lector.onload = () => resolve(lector.result.split(',')[1]);
+        lector.onerror = reject;
+        lector.readAsDataURL(file);
+      });
+    }
+</script>
+	
 </body>
 </html>
