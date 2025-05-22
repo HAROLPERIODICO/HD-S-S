@@ -252,18 +252,10 @@
   ============================ */
 
 indicadores {
-  padding: 4rem 1rem;
+  padding: 8rem 1rem;
   background-color: #fffaf5;
   top: 100px;
 }
-
-.indicadores .container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 2rem;
-}
-
 
 .indicadores-menu {
   display: flex;
@@ -318,7 +310,7 @@ indicadores {
   /* ============================
       SECCIÓN NOSOTROS
   ============================ */
-.nosotros {
+nosotros {
   padding: 4rem 1rem;
   background-color: #fffaf5;
 }
