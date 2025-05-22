@@ -1,4 +1,3 @@
-
 function aplicarFiltrosRE() {
   const equipo = document.getElementById('filtroEquipo').value.toLowerCase();
   const grupo = document.getElementById('filtroGrupo').value.toLowerCase();
