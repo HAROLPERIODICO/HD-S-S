@@ -319,6 +319,7 @@
 .indicadores {
   padding: 4rem 1rem;
   background-color: #fffaf5;
+  top: 100px;
 }
 
 /*.indicadores h2 {
@@ -327,6 +328,12 @@
   font-size: 2rem;
   color: #f1c0785;
 }*/
+.indicadores .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
 
 
 .indicadores-menu {
