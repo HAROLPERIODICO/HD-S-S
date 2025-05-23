@@ -33,7 +33,7 @@ async function cargarDatosBACKLOG() {
   }
 }
 
-reForm.addEventListener('submit', async function (e) {
+backlogForm.addEventListener('submit', async function (e) {
   e.preventDefault();
   const formData = new FormData(backlogForm);
 
@@ -44,8 +44,8 @@ reForm.addEventListener('submit', async function (e) {
     });
 
     const responseData = await res.json(); // solo si App Script devuelve JSON válido
-    agregarFilaRE(responseData);
-    reForm.reset();
+    agregarFilaBACKLOG(responseData);
+    BACKLOGForm.reset();
   } catch (err) {
     console.error('Error al enviar datos BACKLOG:', err);
   }
@@ -77,32 +77,32 @@ function aplicarFiltrosBACKLOG() {
 }
 
 document.getElementById('mostrarTablaBACKLOG').addEventListener('click', function () {
-  const tabla = document.getElementById('contenedorTablaBACKLOG');
-  if (tabla.style.display === 'none') {
-    tabla.style.display = 'block';
+  const tablaBL = document.getElementById('contenedorTablaBACKLOG');
+  if (tablaBL.style.display === 'none') {
+    tablaBL.style.display = 'block';
     this.textContent = 'Ocultar tabla BACKLOG';
   } else {
-    tabla.style.display = 'none';
+    tablaBL.style.display = 'none';
     this.textContent = 'Mostrar tabla BACKLOG';
   }
 });
 
 
-const btnMostrarB = document.getElementById('mostrarTablaBACKLOG');
-const contenedorTablaB = document.getElementById('contenedorTablaBACKLOG');
+const btnMostrarBL = document.getElementById('mostrarTablaBACKLOG');
+const contenedorTablaBL = document.getElementById('contenedorTablaBACKLOG');
 
-btnMostrarB.addEventListener('click', function () {
-  if (contenedorTablaB.classList.contains('mostrar')) {
-    contenedorTablaB.classList.remove('mostrar');
+btnMostrarBL.addEventListener('click', function () {
+  if (contenedorTablaBL.classList.contains('mostrar')) {
+    contenedorTablaBL.classList.remove('mostrar');
     // Esperar la transición antes de ocultar completamente
     setTimeout(() => {
-      contenedorTablaB.style.display = 'none';
+      contenedorTablaBL.style.display = 'none';
     }, 300);
     this.textContent = 'Mostrar tabla BACKLOG';
   } else {
-    contenedorTablaB.style.display = 'block';
+    contenedorTablaBL.style.display = 'block';
     setTimeout(() => {
-      contenedorTablaB.classList.add('mostrar');
+      contenedorTablaBL.classList.add('mostrar');
     }, 10);
     this.textContent = 'Ocultar tabla BACKLOG';
   }
