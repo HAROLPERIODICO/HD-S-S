@@ -1,29 +1,29 @@
 document.getElementById('mostrarTablaBACKLOG').addEventListener('click', function () {
-  const tabla = document.getElementById('contenedorTablaBACKLOG');
-  if (tabla.style.display === 'none') {
-    tabla.style.display = 'block';
+  const tablaB = document.getElementById('contenedorTablaBACKLOG');
+  if (tablaB.style.display === 'none') {
+    tablaB.style.display = 'block';
     this.textContent = 'Ocultar tabla BACKLOG';
   } else {
-    tabla.style.display = 'none';
+    tablaB.style.display = 'none';
     this.textContent = 'Mostrar tabla BACKLOG';
   }
 });
 
-const btnMostrar = document.getElementById('mostrarTablaBACKLOG');
-const contenedorTabla = document.getElementById('contenedorTablaBACKLOG');
+const btnMostrarB = document.getElementById('mostrarTablaBACKLOG');
+const contenedorTablaB = document.getElementById('contenedorTablaBACKLOG');
 
-btnMostrar.addEventListener('click', function () {
-  if (contenedorTabla.classList.contains('mostrar')) {
-    contenedorTabla.classList.remove('mostrar');
+btnMostrarB.addEventListener('click', function () {
+  if (contenedorTablaB.classList.contains('mostrar')) {
+    contenedorTablaB.classList.remove('mostrar');
     // Esperar la transición antes de ocultar completamente
     setTimeout(() => {
-      contenedorTabla.style.display = 'none';
+      contenedorTablaB.style.display = 'none';
     }, 300);
     this.textContent = 'Mostrar tabla RE';
   } else {
-    contenedorTabla.style.display = 'block';
+    contenedorTablaB.style.display = 'block';
     setTimeout(() => {
-      contenedorTabla.classList.add('mostrar');
+      contenedorTablaB.classList.add('mostrar');
     }, 10);
     this.textContent = 'Ocultar tabla BACKLOG';
   }
