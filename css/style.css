@@ -223,7 +223,7 @@
   }
 
 
-.cta .btn-bac {
+.btn-bac {
     background-color: #122d70;
     color: #fff;
     padding: 10px 20px;
@@ -232,7 +232,7 @@
     transition: background-color 0.3s ease;
   }
   
-  .cta .btn-bac:hover {
+  .btn-bac:hover {
     background-color: #3d1ba8;
   }
 
@@ -448,7 +448,7 @@ form textarea {
   font-size: 14px;
 }
 
- button {
+ .button {
   grid-column: span 2;
   padding: 10px;
   background: #122D70;
@@ -459,18 +459,18 @@ form textarea {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover {
   background: #7b64ed;
 }
 
 /* Tabla */
-reTable {
+.reTable {
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
 }
 
-thead {
+.thead {
   background: #122D70;
   color: white;
 }
@@ -517,11 +517,11 @@ tbody tr:nth-child(even) {
 
 /* Responsive */
 @media (max-width: 768px) {
-  form {
+  .form {
     grid-template-columns: 1fr;
   }
 
-  th, td {
+  .th, td {
     font-size: 10px;
   }
     .re-tabla {
@@ -584,7 +584,7 @@ tbody tr:nth-child(even) {
 }
 
 /* Botón de envío */
-#form-backlog button[type="submit"] {
+.form-backlog button[type="submit"] {
   background-color: #122D70;
   color: #fff;
   padding: 0.8rem 1.5rem;
@@ -596,7 +596,7 @@ tbody tr:nth-child(even) {
   transition: background-color 0.3s ease;
 }
 
-#form-backlog button[type="submit"]:hover {
+.form-backlog button[type="submit"]:hover {
   background-color: #7b64ed;
 }
 
@@ -615,7 +615,7 @@ tbody tr:nth-child(even) {
     padding: 2rem 1rem;
   }
 
-  #form-backlog {
+  .form-backlog {
     padding: 1.5rem;
   }
 }
