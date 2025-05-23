@@ -236,7 +236,7 @@
     background-color: #3d1ba8;
   }
 
-.cta .btn-ins {
+.btn-ins {
     background-color: #122d70;
     color: #fff;
     padding: 10px 20px;
@@ -245,7 +245,7 @@
     transition: background-color 0.3s ease;
   }
   
-  .cta .btn-ins:hover {
+ .btn-ins:hover {
     background-color: #3d1ba8;
   }
 
@@ -312,7 +312,7 @@
   /* ============================
       SECCIÓN NOSOTROS
   ============================ */
-nosotros {
+.nosotros {
   padding: 4rem 1rem;
   background-color: #bbd1ed;
 }
