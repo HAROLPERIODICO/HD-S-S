@@ -258,7 +258,7 @@
   ============================ */
 
 .indicadores {
-  padding: 120px 0;
+  padding: 120px 10px;
   background-color: #d5e1f0; 
   
 }
@@ -317,7 +317,7 @@
       SECCIÓN NOSOTROS
   ============================ */
 .nosotros {
-  padding: 4rem 1rem;
+   padding: 30px 10;
   background-color: #bbd1ed;
 }
 
