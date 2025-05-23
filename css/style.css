@@ -209,10 +209,14 @@
   }
 
   /* BOTÓN CTA */
+
+    .cta{
+        padding: 20px;
+    }
     .cta .btn {
     background-color: #122d70;
     color: #fff;
-    padding: 30px;
+    padding:  10px 20px;
     border-radius: 25px;
     font-weight: bold;
     transition: background-color 0.3s ease;
