@@ -222,7 +222,7 @@
     transition: background-color 0.3s ease;
 
     position: fixed;
-    top: 220px;
+    top: 300px;
     left: 20px;
     z-index: 1000;
   }
@@ -246,6 +246,11 @@
     border-radius: 25px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+
+    position: fixed;
+    top: 400px;
+    left: 20px;
+    z-index: 1000;
   }
   
   .btn-bac:hover {
@@ -259,6 +264,11 @@
     border-radius: 25px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+
+    position: fixed;
+    top: 350px;
+    left: 20px;
+    z-index: 1000;
   }
   
  .btn-ins:hover {
