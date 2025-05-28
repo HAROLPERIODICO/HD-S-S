@@ -220,7 +220,19 @@
     border-radius: 25px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+
+    position: fixed;
+    top: 220px;
+    left: 20px;
+    z-index: 1000;
   }
+
+.logo-chm {
+  position: fixed;
+  top: 150px;
+  left: 20px;
+  z-index: 1000;
+}
   
   .cta .btn:hover {
     background-color: #3d1ba8;
