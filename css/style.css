@@ -20,7 +20,7 @@
 
 .logo-chm {
   position: fixed;
-  top: 100px;
+  top: 130px;
   left: 20px;
   z-index: 1000;
 }
@@ -31,7 +31,7 @@
 }
 .bandera-chm {
   position: fixed;
-  top: 100px;
+  top: 130px;
   right: 20px;
   z-index: 1000;
 }
