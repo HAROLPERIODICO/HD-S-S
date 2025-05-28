@@ -1,94 +1,740 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Widget Cronómetro</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #1e1e2f;
-      color: white;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 200px;
-      height: 120px;
-      overflow: hidden;
-      user-select: none;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WM MARC PALAS cerrejón</title>
+    <!--<link rel="shortcut icon" href="./img/faviconchm.png" type="image/x-icon">-->
+    <link rel="icon" type="image/png" href="https://harolperiodico.github.io/MARC-PALAS/img/faviconchm.png">
+    
+    
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
 
-    #cronometro {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
+    <meta name="theme-color" content="#2091F9">
+    <meta name="title" content="CHM WM">
+    <meta name="description"
+        content="Encontraras todo lo relacionado con el Work Management del contrato MARC PALAS HIDRAULICA CHM Mineria Cerrejón.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://harolperiodico.github.io/MARC-PALAS/">
+    <meta property="og:title" content="Work Management PALAS CHM cerrejón">
+    <meta property="og:description"
+        content="Encontraras todo lo relacionado con el contrato MARC PALAS HIDRAULICA CHM Mineria Cerrejón.">
+    <meta property="og:image" content="https://harolperiodico.github.io/MARC-PALAS/img/logo75.png">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
-    .botones {
-      display: flex;
-      gap: 6px;
-    }
-
-    button {
-      background: #444;
-      color: #fff;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 6px;
-      font-size: 0.8em;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #666;
-    }
-  </style>
 </head>
+
 <body>
-
-  <div id="cronometro">00:00:00</div>
-  <div class="botones">
-    <button onclick="iniciar()">▶</button>
-    <button onclick="pausar()">⏸</button>
-    <button onclick="reiniciar()">⟲</button>
+  <div class="logo-chm">
+    <img src="img/logochm.png" alt="" loading="lazy" />
   </div>
+  <div class="bandera-chm">
+    <img src="img/banderachm.png" alt="" loading="lazy" />
+  </div>	
+    <header class="header" id="main-header">
+        <div class="container">
+         <!-- Logo de marc -->
+          <h1 class="logo">
+             <a href="#">
+               <img src="img/logo75.png" alt="" loading="lazy" />
+               Work Management PALAS Cerrejón
+             </a>
+          </h1>
+         <!-- Ícono hamburguesa -->   
+          <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+         <!-- Barra de navegación -->
+          <nav class="nav" id="nav">
+             <ul id="menu">
+      		<li><a href="#indicadores">Indicadores</a></li> 
+      		<li><a href="#nosotros">Nosotros</a></li>
+		<li><a href="#status">Estátus</a></li>
+		<li><a href="#programacion">Programación</a></li>
+   		<li><a href="#re">RE</a></li>
+      		<li><a href="#backlog">BACKLOG</a></li>
+      		<li><a href="#inspecciones">Inspecciones</a></li>
+      	      </ul>     
+          </nav>
 
-  <script>
-    let segundos = 0;
-    let intervalo = null;
-    let corriendo = false;
+     
+ 
 
-    function actualizar() {
-      const hrs = String(Math.floor(segundos / 3600)).padStart(2, '0');
-      const min = String(Math.floor((segundos % 3600) / 60)).padStart(2, '0');
-      const sec = String(segundos % 60).padStart(2, '0');
-      document.getElementById("cronometro").textContent = `${hrs}:${min}:${sec}`;
-    }
+     </header>
 
-    function iniciar() {
-      if (!corriendo) {
-        corriendo = true;
-        intervalo = setInterval(() => {
-          segundos++;
-          actualizar();
-        }, 1000);
-      }
-    }
+    <main>
+      
+	      <section id="indicadores" class="indicadores">
+	          <div class="container">
+	            <h2>Indicadores</h2>
+	            <ul class="indicadores-menu">
+	              <li data-target="dis-meta">DIS - Meta Mensual</li>
+	            <div class="indicador-contenido" id="dis-meta">
+	              <h3>DIS - Meta Mensual</h3>
+	              <p>Indicador que muestra el rendimiento mensual en relación con la meta establecida.</p>
+	              <img src="img/logo75.png" alt="DIS Meta Mensual">
+	            </div>
+	              <li data-target="dis-acumulada">DIS - Acumulada</li>
+	            <div class="indicador-contenido" id="dis-acumulada">
+	                <h3>DIS - Acumulada</h3>
+	                <p>Acumulado de rendimiento DIS durante el año actual.</p>
+	              <img src="img/logo75.png" alt="DIS Acumulada">
+	            </div>          
+	              <li data-target="mtbf">MTBF</li>
+	            <div class="indicador-contenido" id="mtbf">
+	                <h3>MTBF</h3>
+	                <p>Tiempo medio entre fallos de los equipos monitoreados.</p>
+	              <img src="img/logo75.png" alt="MTBF">
+	            </div>          
+	              <li data-target="mtfs">MTFS</li>
+	            <div class="indicador-contenido" id="mtfs">
+	                <h3>MTFS</h3>
+	                <p>Tiempo medio para el fallo de seguridad operacional.</p>
+	              <img src="img/logo75.png" alt="MTFS">
+	            </div>          
+	              <li data-target="mtbs">MTBS</li>
+	            <div class="indicador-contenido" id="mtbs">
+	                <h3>MTBS</h3>
+	                <p>Tiempo medio entre mantenimientos básicos.</p>
+	              <img src="img/logo75.png" alt="MTBS">
+	            </div>          
+	              <li data-target="imprevisto">Imprevistos</li>
+	            <div class="indicador-contenido" id="imprevisto">
+	               <h3>Imprevistos</h3>
+	               <p>Eventos no programados que afectaron la operación.</p>
+	              <img src="img/logo75.png" alt="Imprevistos">
+	            </div>           
+	            </ul>
+	          </div>
 
-    function pausar() {
-      clearInterval(intervalo);
-      corriendo = false;
-    }
+	      	</section>
+		   <section id="nosotros" class="nosotros">
+		        <h2>Marc palas enterate Que hacemos</h2>
+		          <div class="slider-nosotros">
+		            <div class="swiper mySwiper">
+		              <div class="swiper-wrapper">
+		                <!-- Slide 1 -->
+		                <div class="swiper-slide">
+		                  <img src="img/pala2.png" alt="" loading="lazy" />
+		                  <p><strong>Compromiso</strong>: Nos dedicamos con pasión a cada proyecto.</p>
+		                </div>
+		                <!-- Slide 2 -->
+		                <div class="swiper-slide">
+		                  <img src="img/cargue2.png" alt="" loading="lazy" />
+		                  <p><strong>Trabajo en equipo</strong>: La colaboración es nuestra base.</p>
+		                </div>
+		                <!-- Slide 3 -->
+		                <div class="swiper-slide">
+		                  <img src="img/procontours2.png" alt="" loading="lazy" />
+		                  <p><strong>Innovación</strong>: Buscamos siempre mejorar y evolucionar.</p>
+		                </div>
+		                <!-- Slide 4 -->
+		                <div class="swiper-slide">
+		                  <img src="img/thermal1.png" alt="" loading="lazy" />
+		                  <p><strong>Seguridad</strong>: Cuidamos a nuestro equipo en cada paso.</p>
+		                </div>
+		              </div>
+	
+	              <!-- Paginación -->
+	              <div class="swiper-pagination"></div>
+	            </div>
+	          </div>
+		
 
-    function reiniciar() {
-      pausar();
-      segundos = 0;
-      actualizar();
-    }
+	          <div class="container">
+	            <div class="nosotros-texto" data-aos="fade-right">
+	              <h2>¿Quiénes Somos?</h2>
+	              <p>
+	                En <strong>MARC PALAS Cerrejón</strong> estamos comprometidos con la excelencia...
+	              </p>
+	              <p>
+	                Con una cultura basada en el respeto, el compromiso y la mejora continua...
+	              </p>
+	            </div>
+	            <div class="nosotros-imagen" data-aos="fade-left">
+	              <img src="img/pala800.png" alt="Nuestro equipo" loading="lazy">
+	            </div>
+	          </div>
+	          <div class="nosotros-texto" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+	          </div>
+	        </section>
+	    
+	    <!-- STATUS -->
+	        <section id="status" class="status">
+	          <div class="container">
+	            <h2>Status de la flota 3600</h2>
+	            <ul class="status-menu">
+	                <h3>Equipos DOWN</h3>
+	                <p>Equipos que se presentan down</p>
+	              <img src="img/logo75.png" alt="Equipos DOWN">
+	            </div>
+	              
+		   </div>
+	         </section>
 
-    actualizar(); // mostrar 00:00:00 al cargar
-  </script>
+	    	    <!-- PROGRAMACION -->
+	        <section id="programacion" class="programacion">
+	          <div class="container">
+	            <h2>Programación de la flota 3600</h2>
+	            <ul class="programacion-menu">
+	             
+	            <div class="programacion-A1" id="programacion-A1">
+	                <h3>Turno DIURNO</h3>
+	                <p>Programación a realizar en el turno A1.</p>
+	              <img src="img/logo75.png" alt="Programacion A1">
+	            </div>
+	             
+	            <div class="programacion-A2" id="programacion-A2">
+	                <h3>Turno NOCTURNO</h3>
+	                <p>Programación a realizar en el turno A2.</p>
+	              <img src="img/logo75.png" alt="Programacion A2">
+	            </div>
+		   </div>			  
+	         </section>
+				<!-- Llamado a la acción RE -->
+			           <div class="cta">
+			             <a href="#re" class="btn">!Reporta¡ RE</a>          
+				       </div> 
+	    
+	                <!-- RE FORMULARIO -->
+	        <section id="seccion-re">
+			<div class="container">
+		          <h2>Reportes RE</h2>
 
+					<div class="tab-content" id="re">
+				          <form id="reForm" enctype="multipart/form-data">
+				              <label>Fecha: <input type="date" name="fecha" required></label>
+				              <label>Equipo:
+				                <select name="equipo" required>
+				                  <option value="" disabled selected>Seleccione equipo</option>
+				                  <option value="137">137</option>
+				                  <option value="138">138</option>
+				                  <option value="139">139</option>
+				                  <option value="140">140</option>
+				                  <option value="141">141</option>
+				                  <option value="142">142</option>
+				                  <option value="143">143</option>
+				                  <option value="144">144</option>
+				                  <option value="145">145</option>
+				                  <option value="146">146</option>
+				                  <option value="147">147</option>
+				                  <option value="148">148</option>
+				                  <option value="149">149</option>
+				                  <option value="150">150</option>
+				                  <option value="151">151</option>
+				                  <option value="152">152</option>
+				                  <option value="153">153</option>
+				                  <option value="154">154</option>
+				                  <option value="155">155</option>
+				                  <option value="156">156</option>
+				                </select>
+				              <label>Descripción:
+				                <textarea name="descripcion" rows="3" required></textarea>
+				              </label>
+				
+				              <label>Parte: <input type="text" name="parte" placeholder="Si no tiene (No o Ningúna)" required></label>
+						      
+				              <label>Prioridad:
+				                <select name="prioridad" required>
+				                  <option value="P1">P1</option>
+				
+				                </select>
+				              </label>
+						      
+				              <label>Responsable: <input type="text" name="responsable" required></label>
+				
+				              <label>Turno:
+				                <select name="turno" required>
+				                  <option value="A1">A1</option>
+				                  <option value="A2">A2</option>
+				                </select>
+				              </label>
+				
+				              <label>Grupo:
+				                <select name="grupo" required>
+				                  <option value="G1">G1</option>
+				                  <option value="G2">G2</option>
+				                  <option value="G3">G3</option>
+				                </select>
+				              </label>
+				
+				              <label>Acción:
+				                <select name="accion" required>
+				                  <option value="Abierta">Abierta</option>
+				                  <option value="Cerrada">Cerrada</option>
+				                </select>
+						      
+				              </label>
+						      
+						<label>Imagen:
+							
+							  <input type="file" name="imagen" id="imagenInput" accept="image/*" capture="environment">
+							</label>
+		
+				            <button type="submit">Enviar</button>
+				          </form>
+				          </div>
+			
+			 <!-- RE TABLA -->
+		  
+		          <h2>Registros de RE</h2>
+			  <button id="mostrarTablaRE">Mostrar tabla RE</button>
+			  <div class="table-container" id="contenedorTablaRE">
+			    <div class="container">
+			      <table id="reTable" border="2">
+		            <thead>
+				  <tr>
+				    <th>
+				      Fecha<br>
+				      <input type="date" id="filtroFecha">
+				    </th>
+				    <th>
+				      Equipo<br>
+				    <select id="filtroEquipo">
+				      	<option value="">Todas</option>
+				        <option value="137">137</option>
+				        <option value="138">138</option>
+					<option value="139">139</option>
+				        <option value="140">140</option>
+				        <option value="141">141</option>
+					<option value="142">142</option>
+				        <option value="143">143</option>				       
+				        <option value="144">144</option>
+				        <option value="145">145</option>
+					<option value="146">146</option>
+				        <option value="147">147</option>
+				        <option value="148">148</option>
+				        <option value="149">149</option>
+					<option value="150">150</option>
+				        <option value="151">151</option>
+				        <option value="152">152</option>
+				        <option value="153">153</option>
+					<option value="154">154</option>
+				        <option value="155">155</option>
+				    </th>
+				    <th>Descripción</th>
+				    <th>Parte</th>
+				    <th>
+				      Prioridad<br>
+				    <select id="filtroPrioridad">
+				      	<option value="">Todas</option>
+				        <option value="P1">P1</option>
+
+				    </th>
+				    <th>Responsable</th>
+				    <th>
+					Turno<br>
+				      <select id="filtroTurno">
+				        <option value="">Todas</option>
+				        <option value="A1">A1</option>
+				        <option value="A2">A2</option>
+				    </th>
+				    <th>
+				      Grupo<br>
+				      <select id="filtroGrupo">
+				        <option value="">Todas</option>
+				        <option value="G1">G1</option>
+				        <option value="G2">G2</option>
+					<option value="G3">G3</option>
+				    </th>
+				    <th>
+				      Acción<br>
+				      <select id="filtroAccion">
+				        <option value="">Todas</option>
+				        <option value="Abierta">Abierta</option>
+				        <option value="Cerrada">Cerrada</option>
+				      </select>
+				    </th>
+				    <th>Imagen</th>
+				  </tr>
+				</thead>
+
+		            <tbody>
+		              <!-- Aquí se insertarán las filas dinámicamente -->
+		            </tbody>
+		          </table>
+		          </div>
+			</div>
+		     </section>
+	      
+			<!-- Sección BACKLOG -->
+	              <section id="seccion-backlog">
+			<div class="container">
+			   <h2>Reporte de backlog.</h2>
+		<!-- Llamado a la acción BACKLOG -->
+	           <div class="cta-bac">
+		       <a href="#backlog" class="btn-bac">Reporta tU backlog</a>           
+		       </div> 
+			<div class="tab-content" id="backlog">
+		                  <form id="backlogForm" enctype="multipart/form-data">
+		                    <label>Fecha: <input type="date" name="fecha" required></label>
+		                    <label>Equipo:
+		                      <select name="equipo" required>
+		                        <option value="" disabled selected>Seleccione equipo</option>
+		                        <option value="137">137</option>
+		                        <option value="138">138</option>
+		                        <option value="139">139</option>
+		                        <option value="140">140</option>
+		                        <option value="141">141</option>
+		                        <option value="142">142</option>
+		                        <option value="143">143</option>
+		                        <option value="144">144</option>
+		                        <option value="145">145</option>
+		                        <option value="146">146</option>
+		                        <option value="147">147</option>
+		                        <option value="148">148</option>
+		                        <option value="149">149</option>
+		                        <option value="150">150</option>
+		                        <option value="151">151</option>
+		                        <option value="152">152</option>
+		                        <option value="153">153</option>
+		                        <option value="154">154</option>
+		                        <option value="155">155</option>
+		                        <option value="156">156</option>
+		                      </select>
+		                    </label>
+		
+			              <label>Descripción:
+			                <textarea name="descripcion" rows="3" required></textarea>
+			              </label>
+			
+			              <label>Parte: <input type="text" name="parte" placeholder="Si no tiene colocar (No o Ningúna)" required></label>
+			
+			              <label>Prioridad:
+			                <select name="turno" required>
+			                  <option value="P1">P1</option>
+			                  <option value="P2">P2</option>
+			                  <option value="P3">P3</option>
+			                  <option value="P4">P4</option>
+			                </select>
+			              </label>
+			
+			              <label>Responsable: <input type="text" name="responsable" required></label>
+			
+			              <label>Turno:
+			                <select name="turno" required>
+			                  <option value="A1">A1</option>
+			                  <option value="A2">A2</option>
+			                </select>
+			              </label>
+			
+			              <label>Grupo:
+			                <select name="grupo" required>
+			                  <option value="G1">G1</option>
+			                  <option value="G2">G2</option>
+			                  <option value="G3">G3</option>
+			                </select>
+			              </label>
+			
+			              <label>Acción:
+			                <select name="accion" required>
+			                  <option value="Abierta">Abierta</option>
+			                  <option value="Cerrada">Cerrada</option>
+			                </select>
+			              </label>
+						  
+				      </label>
+						  
+					<label>Imagen:
+			  			<input type="file" name="imagen" accept="image/*" capture="environment">
+					</label>
+						  
+			              <button type="submit">Enviar BACKLOG</button>
+			            </form>
+		                </div>
+			
+		    
+				<!-- BACKLOG TABLA -->
+		        
+			          <h2>Registros de BACKLOG</h2>
+			          <button id="mostrarTablaBACKLOG">Mostrar tabla BACKLOG</button>
+				    <div class="table-container" id="contenedorTablaBACKLOG" style="display: none;">
+					<div class="container">
+			          		<table id="backlogTable" border="2">
+					<thead>
+					  <tr>
+					    <th>
+					      Fecha<br>
+					      <input type="date" id="filtroFecha">
+					    </th>
+					    <th>
+					      Equipo<br>
+					    <select id="filtroEquipo">
+					      	<option value="">Todas</option>
+					        <option value="137">137</option>
+					        <option value="138">138</option>
+						<option value="139">139</option>
+					        <option value="140">140</option>
+					        <option value="141">141</option>
+						<option value="142">142</option>
+					        <option value="143">143</option>				       
+					        <option value="144">144</option>
+					        <option value="145">145</option>
+						<option value="146">146</option>
+					        <option value="147">147</option>
+					        <option value="148">148</option>
+					        <option value="149">149</option>
+						<option value="150">150</option>
+					        <option value="151">151</option>
+					        <option value="152">152</option>
+					        <option value="153">153</option>
+						<option value="154">154</option>
+					        <option value="155">155</option>
+					    </th>
+					    <th>Descripción</th>
+					    <th>Parte</th>
+					    <th>
+					      Prioridad<br>
+					    <select id="filtroPrioridad">
+					      	<option value="">Todas</option>
+					        <option value="P1">P1</option>
+					        <option value="P2">P2</option>
+						<option value="P3">P3</option>
+					        <option value="P4">P4</option>
+					    </th>
+					    <th>Responsable</th>
+					    <th>
+					      <select id="filtroTurno">
+					        <option value="">Todas</option>
+					        <option value="A1">A1</option>
+					        <option value="A2">A2</option>
+					    </th>
+					    <th>
+					      Grupo<br>
+					      <select id="filtroGrupo">
+					        <option value="">Todas</option>
+					        <option value="G1">G1</option>
+					        <option value="G2">G2</option>
+						<option value="G3">G3</option>
+					    </th>
+					    <th>
+					      Acción<br>
+					      <select id="filtroAccion">
+					        <option value="">Todas</option>
+					        <option value="Abierta">Abierta</option>
+					        <option value="Cerrada">Cerrada</option>
+					      </select>
+					    </th>
+					    <th>Imagen</th>
+					  </tr>
+					</thead>
+	
+			            <tbody>
+			              <!-- Aquí se insertarán las filas dinámicamente -->
+			            </tbody>
+			          </table>
+			          </div>
+				</div>
+		            </section>
+
+	    <!-- STATUS -->
+	        <section id="inspecciones" class="inspecciones">
+	          <div class="container">
+	            <h2>Inpecciones DIARIAS</h2>
+	            <ul class="inspecciones-menu">
+	                <h3>Inspecciones</h3>
+	                <p>Inspecciones diaria de los equipos</p>
+	              <img src="img/logo75.png" alt="Equipos DOWN">
+			<!-- Llamado a la acción INSPECCION -->
+	           <div class="cta-ins">
+	             <a href="#inspecciones" class="btn-ins">!Reporta¡ INSPECCIONES</a>          
+		       </div> 
+	            </div>
+	      	</section>	    
+	    
+	    
+	        
+        
+
+
+    </main>
+
+	        <footer class="footer">
+                 <div class="container">
+                   <div class="footer-container">
+                    <nav class="footer-nav">
+                     <ul>
+	      		<li><a href="#indicadores">Indicadores</a></li> 
+	      		<li><a href="#nosotros">Nosotros</a></li>
+			<li><a href="#status">Estatus</a></li>
+			<li><a href="#programacion">Programación</a></li>
+	   		<li><a href="#re">RE</a></li>
+	      		<li><a href="#backlog">BACKLOG</a></li>
+	      		<li><a href="#inspecciones">Inspecciones</a></li>
+                     </ul>
+                    </nav>
+                        <div class="redes-sociales">
+                           <a href="https://www.linkedin.com/company/chm-sas/posts/?feedView=all" target="_blank" class="facebook">
+                           <i class="fab fa-facebook-f"></i> Linkedin
+                           </a>
+                           
+                           <a href="https://www.instagram.com/chmmineria?igsh=NzZvbDVrb3NobGRt" target="_blank" class="instagram">
+                           <i class="fab fa-instagram"></i> Instagram
+                           </a>
+       
+                           <a href="https://wa.me/573167543109" target="_blank" class="whatsapp">
+                             <i class="fab fa-whatsapp"></i> WhatsApp
+                            
+                           </a>                  
+       
+                           <a href="https://wa.me/573167543109" target="_blank" class="whatsapp-flotante" aria-label="Chatea por WhatsApp">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="#fff">
+                                <path d="M380.9 97.1C339-9.9 196.7-33.2 106 56.6 49.9 112.7 35.3 202.1 71 276.7L0 480l208.2-67.2c70.5 31.8 155.3 9.2 202.7-63.3 42.6-65.6 42.6-147.9 0-213.4zM226.1 392.6c-24.5 0-48.7-6-70.3-17.5L82.8 396l22.3-73.8c-25.5-42.9-28.1-97.5-6.7-143.3 44.5-93.2 160.3-122.8 243.7-65.2 81.6 56.4 90.5 173.3 17.4 244.3-30.2 29.7-70.2 45.6-111.4 45.6z"/>
+                              </svg>
+                              <span class="tooltip-whatsapp">¡Chatea con el asistente!</span>
+                           </a>
+                       </div>
+                   </div>
+                 </div>
+                 <div class="footer-info">
+                     <p> <strong>powered by HD SOFTWARE SOLUTIONS</strong> &copy; 2025 | Todos los derechos reservados.</p>
+                 </div>
+               </footer>
+               
+
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+<script src="js/aplicarFiltrosRE.js"></script>
+<script src="js/mostrarTablaRE.js"></script>
+<script src="js/aplicarFiltrosBACKLOG.js"></script>
+<script src="js/mostrarTablaBACKLOG.js"></script>
+<script src="js/menu.js"></script>
+
+
+
+<script>
+  const botones = document.querySelectorAll(".indicadores-menu li");
+  const contenidos = document.querySelectorAll(".indicador-contenido");
+
+  botones.forEach(boton => {
+    boton.addEventListener("click", () => {
+      const target = boton.dataset.target;
+
+      // Oculta todos los contenidos y elimina animaciones previas
+      contenidos.forEach(c => {
+        c.style.display = "none";
+        c.style.opacity = 0;
+        c.classList.remove("animado");
+      });
+
+      const seleccionado = document.getElementById(target);
+      seleccionado.style.display = "block";
+
+      // Forzar reflow para reiniciar animación
+      void seleccionado.offsetWidth;
+
+      // Activa la animación
+      seleccionado.classList.add("animado");
+      seleccionado.style.opacity = 1;
+    });
+  });
+</script>
+<script>	
+const reForm = document.getElementById('reForm');
+const reTableBody = document.querySelector('#reTable tbody');
+const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbzXwf2CkI9j7ancpQRCUt_C8nNJtEGDaOyNdMXohhzE5OxxAKKXbniEWgqRQLM6pPIc/exec';
+const imagenInput = document.getElementById('imagenInput');
+
+async function cargarDatosRE() {
+  try {
+    const res = await fetch(reWebhookUrl);
+    const data = await res.json();
+    reTableBody.innerHTML = '';
+    data.forEach(agregarFilaRE);
+  } catch (err) {
+    console.error('Error al cargar datos:', err);
+  }
+}
+
+function agregarFilaRE(item) {
+  const fila = document.createElement('tr');
+  fila.innerHTML = `
+    <td>${item.fecha}</td>
+    <td>${item.equipo}</td>
+    <td>${item.descripcion}</td>
+    <td>${item.parte}</td>
+    <td>${item.prioridad}</td>
+    <td>${item.responsable}</td>
+    <td>${item.turno}</td>
+    <td>${item.grupo}</td>
+    <td>${item.accion}</td>
+    <td>${item.imagenUrl ? <a href="${item.imagenUrl}" target="_blank">Ver imagen</a> : 'Sin imagen'}</td>
+  `;
+  reTableBody.appendChild(fila);
+}
+
+reForm.addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const formData = new FormData(reForm);
+  const file = imagenInput.files[0];
+
+  let imagenBase64 = '';
+  if (file) {
+    imagenBase64 = await convertirArchivoABase64(file);
+  }
+
+  const datos = {
+    fecha: formData.get('fecha'),
+    equipo: formData.get('equipo'),
+    descripcion: formData.get('descripcion'),
+    parte: formData.get('parte'),
+    prioridad: formData.get('prioridad'),
+    responsable: formData.get('responsable'),
+    turno: formData.get('turno'),
+    grupo: formData.get('grupo'),
+    accion: formData.get('accion'),
+    imagen: imagenBase64
+  };
+
+  try {
+    const res = await fetch(reWebhookUrl, {
+      method: 'POST',
+      body: JSON.stringify(datos),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    const responseData = await res.json();
+    agregarFilaRE(responseData);
+    reForm.reset();
+  } catch (err) {
+    console.error('Error al enviar datos RE:', err);
+  }
+});
+
+function convertirArchivoABase64(file) {
+  return new Promise((resolve, reject) => {
+    const lector = new FileReader();
+    lector.onload = () => resolve(lector.result.split(',')[1]);
+    lector.onerror = reject;
+    lector.readAsDataURL(file);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', cargarDatosRE);
+</script>
+	
 </body>
 </html>
