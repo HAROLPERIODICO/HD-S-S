@@ -617,7 +617,7 @@
     },
   });
 </script>
-<script src="js/aplicarFiltrosRE.js"></script>
+
 <script src="js/mostrarTablaRE.js"></script>
 <script src="js/aplicarFiltrosBACKLOG.js"></script>
 <script src="js/mostrarTablaBACKLOG.js"></script>
@@ -735,6 +735,39 @@
       cuerpoTabla.appendChild(tr);
     });
   }
+
+	window.addEventListener('DOMContentLoaded', cargarTablaRE);
+
+
+	// Escuchar eventos de filtros
+['filtroFecha', 'filtroEquipo', 'filtroPrioridad', 'filtroTurno', 'filtroGrupo', 'filtroAccion'].forEach(id => {
+  document.getElementById(id).addEventListener('change', aplicarFiltros);
+});
+
+function aplicarFiltros() {
+  const fecha = document.getElementById('filtroFecha').value;
+  const equipo = document.getElementById('filtroEquipo').value;
+  const prioridad = document.getElementById('filtroPrioridad').value;
+  const turno = document.getElementById('filtroTurno').value;
+  const grupo = document.getElementById('filtroGrupo').value;
+  const accion = document.getElementById('filtroAccion').value;
+
+  const filas = document.querySelectorAll('#reTable tbody tr');
+  filas.forEach(fila => {
+    const [fFecha, fEquipo, , , fPrioridad, , fTurno, fGrupo, fAccion] = Array.from(fila.cells).map(td => td.textContent.trim());
+    
+    const cumple = 
+      (!fecha || fFecha === fecha) &&
+      (!equipo || fEquipo === equipo) &&
+      (!prioridad || fPrioridad === prioridad) &&
+      (!turno || fTurno === turno) &&
+      (!grupo || fGrupo === grupo) &&
+      (!accion || fAccion === accion);
+
+    fila.style.display = cumple ? '' : 'none';
+  });
+}
+
 </script>
 
 	
