@@ -272,7 +272,7 @@
 						      
 						<label>Imagen:
 							
-							  <input type="file" name="imagen" id="imagenInput" accept="image/*" capture="environment">
+							  <input type="file" name="imagen" id="imagenInput" accept="image/*">
 							</label>
 		
 				            <button type="submit">Enviar</button>
@@ -652,137 +652,78 @@
     });
   });
 </script>
-<script>
-  const webAppUrl = 'https://script.google.com/macros/s/AKfycbwQcBtTPL4VhYOM8PiucHhR-oxANoTA8mro1qa4xmXnt2LDr5CcSzmJURw-4BhTxoXb/exec';
-
-  document.getElementById('reForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const formData = new FormData(form);
-    const imagen = formData.get('imagen');
-
-    let imagenBase64 = '';
-    if (imagen && imagen.size > 0) {
-      const reader = new FileReader();
-      reader.onloadend = async function () {
-        imagenBase64 = reader.result.split(',')[1];
-
-        const data = new URLSearchParams();
-        for (const [key, value] of formData.entries()) {
-          data.append(key, value);
-        }
-        data.append('imagen', imagenBase64);
-
-        const response = await fetch(webAppUrl, {
-          method: 'POST',
-          body: data
-        });
-
-        if (response.ok) {
-          alert('Datos enviados con éxito');
-          form.reset();
-          cargarTablaRE(); // refresca tabla
-        } else {
-          alert('Error al enviar');
-        }
-      };
-      reader.readAsDataURL(imagen);
-    } else {
-      // Sin imagen
-      const data = new URLSearchParams();
-      for (const [key, value] of formData.entries()) {
-        data.append(key, value);
-      }
-
-      const response = await fetch(webAppUrl, {
-        method: 'POST',
-        body: data
-      });
-
-      if (response.ok) {
-        alert('Datos enviados con éxito');
-        form.reset();
-        cargarTablaRE(); // refresca tabla
-      } else {
-        alert('Error al enviar');
-      }
-    }
-  });
-
-  document.getElementById('mostrarTablaRE').addEventListener('click', cargarTablaRE);
-
-  async function cargarTablaRE() {
-    const response = await fetch(webAppUrl);
-    const datos = await response.json();
-    const cuerpoTabla = document.querySelector('#reTable tbody');
-    cuerpoTabla.innerHTML = '';
-
-    datos.slice(1).forEach(fila => {
-      const tr = document.createElement('tr');
-      fila.forEach((celda, i) => {
-        const td = document.createElement('td');
-        if (i === 9 && celda) {
-          const img = document.createElement('img');
-          img.src = celda;
-          img.style.maxWidth = '100px';
-          td.appendChild(img);
-        } else {
-          td.textContent = celda;
-        }
-        tr.appendChild(td);
-      });
-      cuerpoTabla.appendChild(tr);
-    });
-  }
-
-	
 
 <script>
   document.getElementById("reForm").addEventListener("submit", function (e) {
     e.preventDefault();
-    const formData = new FormData(e.target);
+
+    const form = e.target;
+    const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
+    const fileInput = document.getElementById("imagenInput");
+    const file = fileInput.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = function () {
+        data.imagenBase64 = reader.result.split(",")[1]; // solo la parte base64
+        data.imagenNombre = file.name;
+        enviarDatos(data);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      enviarDatos(data);
+    }
+  });
+
+  function enviarDatos(data) {
     google.script.run
       .withSuccessHandler(() => {
         document.getElementById("mensaje").innerText = "¡Formulario enviado!";
         cargarTabla();
-        e.target.reset();
+        document.getElementById("reForm").reset();
       })
       .guardarDatosRE(data);
-  });
+  }
 
   function cargarTabla() {
     google.script.run.withSuccessHandler(function (datos) {
       const tbody = document.querySelector("#tablaRE tbody");
-      tbody.innerHTML = ""; // Limpia la tabla
+      tbody.innerHTML = "";
 
-      if (!datos || datos.length === 0) {
-        tbody.innerHTML = "<tr><td colspan='9'>Sin datos</td></tr>";
-        return;
-      }
-
-      // Salta la primera fila si es encabezado
       for (let i = 1; i < datos.length; i++) {
         const fila = datos[i];
         const tr = document.createElement("tr");
 
-        // Solo muestra las 9 primeras columnas esperadas
         for (let j = 0; j < 9; j++) {
           const td = document.createElement("td");
           td.textContent = fila[j] || "";
           tr.appendChild(td);
         }
 
+        // Columna de imagen (posición 9)
+        const imagenURL = fila[9];
+        const tdImagen = document.createElement("td");
+        if (imagenURL) {
+          const img = document.createElement("img");
+          img.src = imagenURL;
+          img.alt = "Imagen";
+          img.style.width = "100px";
+          tdImagen.appendChild(img);
+        } else {
+          tdImagen.textContent = "Sin imagen";
+        }
+        tr.appendChild(tdImagen);
+
         tbody.appendChild(tr);
       }
     }).obtenerDatosRE();
   }
 
-  // Ejecutar al cargar la página
   window.onload = cargarTabla;
 </script>
+
 
 	
 </body>
