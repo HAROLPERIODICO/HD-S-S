@@ -652,90 +652,91 @@
     });
   });
 </script>
-<script>	
-const reForm = document.getElementById('reForm');
-const reTableBody = document.querySelector('#reTable tbody');
-const reWebhookUrl = 'https://script.google.com/macros/s/AKfycbxvotCLbAx_nM5P2vTxLhqQsHCrNkWZn82PjudpOOQmJHS2MTGgRfSPHhcvWZd37zxo/exec';
-		     
-const imagenInput = document.getElementById('imagenInput');
+<script>
+  const webAppUrl = 'https://script.google.com/macros/s/TU_ID_DEL_WEB_APP/exec';
 
-async function cargarDatosRE() {
-  try {
-    const res = await fetch(reWebhookUrl);
-    const data = await res.json();
-    reTableBody.innerHTML = '';
-    data.forEach(agregarFilaRE);
-  } catch (err) {
-    console.error('Error al cargar datos:', err);
-  }
-}
+  document.getElementById('reForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
 
-function agregarFilaRE(item) {
-  const fila = document.createElement('tr');
-  fila.innerHTML = `
-    <td>${item.fecha}</td>
-    <td>${item.equipo}</td>
-    <td>${item.descripcion}</td>
-    <td>${item.parte}</td>
-    <td>${item.prioridad}</td>
-    <td>${item.responsable}</td>
-    <td>${item.turno}</td>
-    <td>${item.grupo}</td>
-    <td>${item.accion}</td>
-    <td>${item.imagenUrl ? <a href="${item.imagenUrl}" target="_blank">Ver imagen</a> : 'Sin imagen'}</td>
-  `;
-  reTableBody.appendChild(fila);
-}
+    const form = e.target;
+    const formData = new FormData(form);
+    const imagen = formData.get('imagen');
 
-reForm.addEventListener('submit', async function (e) {
-  e.preventDefault();
-  const formData = new FormData(reForm);
-  const file = imagenInput.files[0];
+    let imagenBase64 = '';
+    if (imagen && imagen.size > 0) {
+      const reader = new FileReader();
+      reader.onloadend = async function () {
+        imagenBase64 = reader.result.split(',')[1];
 
-  let imagenBase64 = '';
-  if (file) {
-    imagenBase64 = await convertirArchivoABase64(file);
-  }
+        const data = new URLSearchParams();
+        for (const [key, value] of formData.entries()) {
+          data.append(key, value);
+        }
+        data.append('imagen', imagenBase64);
 
-  const datos = {
-    fecha: formData.get('fecha'),
-    equipo: formData.get('equipo'),
-    descripcion: formData.get('descripcion'),
-    parte: formData.get('parte'),
-    prioridad: formData.get('prioridad'),
-    responsable: formData.get('responsable'),
-    turno: formData.get('turno'),
-    grupo: formData.get('grupo'),
-    accion: formData.get('accion'),
-    imagen: imagenBase64
-  };
+        const response = await fetch(webAppUrl, {
+          method: 'POST',
+          body: data
+        });
 
-  try {
-    const res = await fetch(reWebhookUrl, {
-      method: 'POST',
-      body: JSON.stringify(datos),
-      headers: { 'Content-Type': 'application/json' }
-    });
+        if (response.ok) {
+          alert('Datos enviados con éxito');
+          form.reset();
+          cargarTablaRE(); // refresca tabla
+        } else {
+          alert('Error al enviar');
+        }
+      };
+      reader.readAsDataURL(imagen);
+    } else {
+      // Sin imagen
+      const data = new URLSearchParams();
+      for (const [key, value] of formData.entries()) {
+        data.append(key, value);
+      }
 
-    const responseData = await res.json();
-    agregarFilaRE(responseData);
-    reForm.reset();
-  } catch (err) {
-    console.error('Error al enviar datos RE:', err);
-  }
-});
+      const response = await fetch(webAppUrl, {
+        method: 'POST',
+        body: data
+      });
 
-function convertirArchivoABase64(file) {
-  return new Promise((resolve, reject) => {
-    const lector = new FileReader();
-    lector.onload = () => resolve(lector.result.split(',')[1]);
-    lector.onerror = reject;
-    lector.readAsDataURL(file);
+      if (response.ok) {
+        alert('Datos enviados con éxito');
+        form.reset();
+        cargarTablaRE(); // refresca tabla
+      } else {
+        alert('Error al enviar');
+      }
+    }
   });
-}
 
-document.addEventListener('DOMContentLoaded', cargarDatosRE);
+  document.getElementById('mostrarTablaRE').addEventListener('click', cargarTablaRE);
+
+  async function cargarTablaRE() {
+    const response = await fetch(webAppUrl);
+    const datos = await response.json();
+    const cuerpoTabla = document.querySelector('#reTable tbody');
+    cuerpoTabla.innerHTML = '';
+
+    datos.slice(1).forEach(fila => {
+      const tr = document.createElement('tr');
+      fila.forEach((celda, i) => {
+        const td = document.createElement('td');
+        if (i === 9 && celda) {
+          const img = document.createElement('img');
+          img.src = celda;
+          img.style.maxWidth = '100px';
+          td.appendChild(img);
+        } else {
+          td.textContent = celda;
+        }
+        tr.appendChild(td);
+      });
+      cuerpoTabla.appendChild(tr);
+    });
+  }
 </script>
+
 	
 </body>
 </html>
